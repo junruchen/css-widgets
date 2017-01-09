@@ -2,13 +2,18 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 //路由
-const index = resolve => require(['./views/index/'], resolve);
+const button = resolve => require(['./views/button/'], resolve);
+const radio = resolve => require(['./views/radio/'], resolve);
+const checkbox = resolve => require(['./views/checkbox/'], resolve);
 
 Vue.use(VueRouter);
 
 var router = new VueRouter({
     routes: [
-        {path: '/', name: 'index', component: index},
+        {path: '/', name: 'index', component: button},
+        {path: '/button', name: 'button', component: button},
+        {path: '/radio', name: 'radio', component: radio},
+        {path: '/checkbox', name: 'checkbox', component: checkbox},
     ]
 });
 

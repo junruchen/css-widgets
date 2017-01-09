@@ -42,8 +42,8 @@ module.exports = {
         //提取文件的公共部分
         new webpack.optimize.CommonsChunkPlugin('commons', 'common.js'),
         new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: '"production"'
+            'process.env': { //development  production
+                NODE_ENV: '"development"'
             }
         }),
         new webpack.optimize.UglifyJsPlugin({

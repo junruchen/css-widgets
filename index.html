@@ -3,12 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>CSS-组件</title>
-    <!--<link rel="stylesheet" href="assets/css/common.css">-->
+    <link rel="stylesheet" href="assets/css/widget/widget-doc.css">
 </head>
-
 <body>
-<div id="app">
-    <router-view></router-view>
+<div class="container">
+    <div style="height: 278px;width: 100%;background-color: #F1F8E9;text-align: center;padding-top: 60px;box-sizing: border-box;margin-bottom: 60px;">
+        <h1>留给未来</h1>
+        <p>这里只有最最基础、最最简单的组件, 连基本的布局都没有...</p>
+        <p>组件样式代码存放-->widget.styl</p>
+    </div>
+    <div id="app">
+        <div class="content">
+            <router-view></router-view>
+        </div>
+
+        <div class="nav">
+            <h2>Conponents</h2>
+            <ul>
+                <li><router-link :to="{name: 'button'}"><h3>Bottons</h3></router-link></li>
+                <li><router-link :to="{name:'radio'}"><h3>Radio Button</h3></router-link></li>
+                <li><router-link :to="{name:'checkbox'}"><h3>Checkbox</h3></router-link></li>
+                <!--<li><router-link ><h3>Text input box</h3></router-link></li>
+                <li><router-link ><h3>Dropdow menu</h3></router-link></li>
+                <li><router-link ><h3>Tips</h3></router-link></li>
+                <li><router-link ><h3>Popover</h3></router-link></li>
+                <li><router-link ><h3>Table</h3></router-link></li>
+                <li><router-link ><h3>Pagination</h3></router-link></li>
+                <li><router-link ><h3>Tabs</h3></router-link></li>
+                <li><router-link ><h3>Progress Bar</h3></router-link></li>-->
+            </ul>
+        </div>
+
+    </div>
 </div>
 <script src="build/common.js"></script>
 <script src="build/build.js"></script>

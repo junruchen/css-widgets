@@ -1,0 +1,94 @@
+@import "../base/reset.styl"; //重置
+@import "../base/methods.styl"; //方法
+@import "color.styl"; //颜色
+
+@import "widget.styl" //组件
+
+html, body {
+  color $color-35;
+}
+
+h1, h2, h3, h4, p {
+  margin-bottom 10px;
+}
+
+h1 {
+  font-weight 500;
+  font-size 36px;
+}
+
+h2 {
+  font-size 24px;
+}
+
+h3 {
+  font-size 20px;
+}
+
+h4 {
+  font-size 18px;
+}
+
+p {
+  font-size 14px;
+  line-height 24px;
+  color $color-65;
+}
+
+.container {
+  margin 0 auto;
+  margin-bottom 200px;
+}
+
+#app {
+  width 1070px;
+  margin 0 auto;
+  & .content {
+    width 780px;
+    float left;
+  }
+  & .nav {
+    float right;
+    width 250px;
+    & ul li {
+      line-height 40px;
+      & .router-link-active h3 {
+        color $color-base;
+      }
+    }
+    & a {
+      & h3 {
+        color $color-35;
+        &:hover {
+          color $color-base;
+        }
+      }
+    }
+  }
+}
+
+.point-text {
+  color $color-yellow-light;
+}
+.examples{
+  display inline-block;
+  padding 30px;
+  border 1px solid $color-F5;
+  margin-bottom 20px;
+}
+.code{
+  font-size 16px;
+  & .d{
+    color #2f6f9f;
+  }
+  & .cn{
+    color #4f9fcf;
+  }
+  & .cv{
+    color #d44950;
+  }
+  & .v{
+    font-size 14px;
+  }
+}
+

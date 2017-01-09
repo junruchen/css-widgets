@@ -1,0 +1,79 @@
+//--前缀
+prefix(prop, args) {
+  -ms-{prop} args
+  -webkit-{prop} args
+  -moz-{prop} args
+  {prop} args
+}
+
+//--通用
+b-box-shadow() {
+  prefix('box-shadow', arguments);
+}
+
+b-border-radius() {
+  prefix('border-radius', arguments);
+}
+
+b-box-sizing() {
+  prefix('box-sizing', arguments);
+}
+
+b-transform() {
+  prefix('transform', arguments);
+}
+
+b-transform-origin() {
+  prefix('transform-origin', arguments);
+}
+
+b-transition() {
+  prefix('transition', arguments);
+}
+
+b-word-hidden() {
+  overflow hidden;
+  text-overflow ellipsis;
+  white-space nowrap;
+}
+
+b-animation() {
+  prefix('animation', arguments);
+}
+
+
+
+// 清除浮动
+.clr {
+  width 0;
+  height 0;
+  overflow hidden;
+  clear both;
+  padding 0;
+  margin 0;
+}
+
+
+//junru 公共
+.container {
+  width 100%;
+  height 100%;
+  margin 0 auto;
+}
+
+.back {
+  cursor pointer;
+  width 70px;
+  height 70px;
+  b-border-radius(50%);
+  background-color rgba(0, 0, 0, .6);
+  text-align center;
+  line-height 70px;
+  position fixed;
+  bottom 60px;
+  right 60px;
+  font-size: 15px;
+  & a {
+    color white;
+  }
+}
