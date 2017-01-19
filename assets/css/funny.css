@@ -1,0 +1,11 @@
+/*minions styles*/
+.minions-box .minions-body {
+  width: 200px;
+  height: 330px;
+  background-color: #ffd700;
+  border: 3px solid #353535;
+  -ms-border-radius: 100%/50%;
+  -webkit-border-radius: 100%/50%;
+  -moz-border-radius: 100%/50%;
+  border-radius: 100%/50%;
+}

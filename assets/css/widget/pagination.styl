@@ -1,0 +1,127 @@
+.pagination {
+  height 32px;
+  margin-left -12px;
+  font-size 12px;
+  line-height 32px;
+  color $color-95;
+  & ul {
+    float left;
+    padding-right 40px;
+    & .page-item {
+      float left;
+      width 32px;
+      height 32px;
+      background-color $color-white;
+      margin-left 12px;
+      b-box-sizing(border-box);
+      border 1px solid transparent;
+      text-align center;
+      cursor pointer;
+      & a {
+        color $color-95;
+      }
+      &:hover {
+        background-color $color-white;
+        border 1px solid $color-base;
+        & a {
+          color $color-base;
+        }
+      }
+      &:first-child, &:last-child {
+        position relative;
+        &:after {
+          content: '';
+          position absolute;
+          width 6px;
+          height 6px;
+          border 1px solid transparent;
+          b-transform rotate(45deg);
+          top 50%;
+          margin-top -3px;
+          left 50%;
+          margin-left -6px;
+        }
+      }
+      &:first-child {
+        &:after {
+          margin-left -3px;
+          border-color transparent transparent $color-65 $color-65;
+        }
+        &:hover {
+          &:after {
+            border-color transparent transparent $color-base $color-base;
+          }
+        }
+      }
+      &:last-child {
+        &:after {
+          border-color $color-65 $color-65 transparent transparent;
+        }
+        &:hover {
+          &:after {
+            border-color $color-base $color-base transparent transparent;
+          }
+        }
+      }
+    }
+    & .active {
+      background-color $color-white;
+      border 1px solid $color-base;
+      & a {
+        color $color-base;
+      }
+    }
+    & .disabled {
+      pointer-events none;
+      &:first-child {
+        &:after {
+          border-color transparent transparent $color-E5 $color-E5;
+        }
+      }
+      &:last-child {
+        &:after {
+          border-color $color-E5 $color-E5 transparent transparent;
+        }
+      }
+    }
+  }
+  & input {
+    outline none;
+    border none;
+    width 72px;
+    height 32px;
+    padding 0 5px;
+    margin 0 8px;
+    b-box-sizing(border-box);
+  }
+  & .page-btn {
+    width 60px;
+    height 32px;
+    display inline-block;
+    text-align center;
+    background-color $color-white;
+    border 1px solid $color-E1;
+    b-box-sizing(border-box);
+    cursor pointer;
+    margin-left 24px;
+    &:hover {
+      color $color-white;
+      background-color $color-base;
+      border-color transparent;
+    }
+  }
+}
+
+.pagination-root {
+  & ul {
+    & .page-item {
+      background-color $color-F5;
+    }
+    & .active {
+      background-color $color-white;
+    }
+  }
+  & input{
+    border 1px solid $color-E1;
+  }
+}

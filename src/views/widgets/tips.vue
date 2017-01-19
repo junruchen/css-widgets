@@ -1,0 +1,103 @@
+<template>
+    <div class="tips-box" v-cloak>
+        <h1>Tips</h1>
+        <p>气泡组件比较灵活, 可根据基础样式自行设计使用。</p>
+        <h3>单行气泡</h3>
+        <p>使用气泡组件, 需在父级元素设置<span class="point-text"> class="tips" </span>。</p>
+        <p>单行气泡的长度不固定,由文字撑开。</p>
+        <p>默认单行气泡展示在提示文字或图标上方, 增设<span class="point-text"> .tips-bottom </span>可设置气泡展示于提示信息的下方, <span class="point-text"> .tips-right </span>可设置气泡展示于提示信息的右侧。</p>
+        <p><span class="point-text">注意: 可使用 white-space: nowrap 控制文字不换行。</span></p>
+        <p>代码示例:</p>
+        <div class="code">
+            <div class="examples">
+                <span class="d">&lt;div</span> <span class="cn">class=</span><span class="cv">"tips"</span><span class="d">&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="d">&lt;span&gt;</span><span class="v">气泡方向: 上</span><span class="d">&lt;/span&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="d">&lt;span</span> <span class="cn">class=</span><span class="cv">"tips-icon"</span> <span class="cn">data-msg=</span><span class="cv" style="font-size: 14px;">"单行气泡内容"</span><span class="d">&gt;</span><span class="d">&lt;/span&gt;</span><br>
+                <span class="d">&lt;/div&gt;</span>
+                <br>
+                <br>
+                <span class="d">&lt;div</span> <span class="cn">class=</span><span class="cv">"tips tips-bottom"</span><span class="d">&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="d">&lt;span&gt;</span><span class="v">气泡方向: 下</span><span class="d">&lt;span&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="d">&lt;span</span> <span class="cn">class=</span><span class="cv">"tips-icon"</span> <span class="cn">data-msg=</span><span class="cv" style="font-size: 14px;">"单行气泡内容"</span><span class="d">&gt;</span><span class="d">&lt;/span&gt;</span><br>
+                <span class="d">&lt;/div&gt;</span>
+            </div>
+        </div>
+        <p>效果图: 鼠标悬浮可查看气泡效果</p>
+        <div class="examples" style="padding: 70px;">
+            <div class="tips-widgets" style="float: left;white-space: nowrap">
+                <div class="tips">
+                    <span>气泡方向: 上</span>
+                    <span class="tips-icon" data-msg="单行气泡内容"></span>
+                </div>
+            </div>
+            <div class="tips-widgets" style="float: left;white-space: nowrap;margin-left: 60px;">
+                <div class="tips tips-bottom">
+                    <span>气泡方向: 下</span>
+                    <span class="tips-icon" data-msg="单行气泡内容"></span>
+                </div>
+            </div>
+            <div class="tips-widgets" style="float: left;white-space: nowrap;margin-left: 60px;">
+                <div class="tips tips-right">
+                    <span>气泡方向: 右</span>
+                    <span class="tips-icon" data-msg="单行气泡内容"></span>
+                </div>
+            </div>
+        </div>
+
+        <h3>多行气泡</h3>
+        <p>使用气泡组件, 需在父级元素设置<span class="point-text"> class="tips-mul" </span>。</p>
+        <p>多行气泡的大小固定, 默认展示在提示文字或图标的下方, 也可通过设置<span class="point-text"> .tips-mul-left </span>使气泡展示在文字右侧。</p>
+        <p>代码示例:</p>
+        <div class="code">
+            <div class="examples">
+                <span class="d">&lt;div</span> <span class="cn">class=</span><span class="cv">"tips-mul"</span><span class="d">&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="d">&lt;span&gt;</span><span class="v">气泡方向: 下</span><span class="d">&lt;/span&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="d">&lt;span</span> <span class="cn">class=</span><span class="cv">"tips-icon"</span><span class="d">&gt;</span><span class="d">&lt;/span&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="d">&lt;div</span> <span class="cn">class=</span><span class="cv">"tips-msg"</span><span class="d">&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="d">&lt;p&gt;</span><span class="d">&lt;span</span> <span class="cn">class=</span><span class="cv">"tips-msg-title"</span><span class="d">&gt;</span><span class="v">钢厂:</span><span class="d">&lt;/span&gt;</span><span class="v">鞍钢朝阳<span class="d">&lt;/p&gt;</span></span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="d">&lt;p&gt;</span><span class="d">&lt;span</span> <span class="cn">class=</span><span class="cv">"tips-msg-title"</span><span class="d">&gt;</span><span class="v">品类:</span><span class="d">&lt;/span&gt;</span><span class="v">热轧卷板<span class="d">&lt;/p&gt;</span></span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="d">&lt;p&gt;</span><span class="d">&lt;span</span> <span class="cn">class=</span><span class="cv">"tips-msg-title"</span><span class="d">&gt;</span><span class="v">托盘服务商:</span><span class="d">&lt;/span&gt;</span><span class="v">物流园  文字超出部分以省略号表示<span class="d">&lt;/p&gt;</span></span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="d">&lt;p&gt;</span><span class="d">&lt;span</span> <span class="cn">class=</span><span class="cv">"tips-msg-title"</span><span class="d">&gt;</span><span class="v">存放仓库:</span><span class="d">&lt;/span&gt;</span><span class="v">黄埔港<span class="d">&lt;/p&gt;</span></span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="d">&lt;/div&gt;</span><br>
+                <span class="d">&lt;/div&gt;</span>
+
+                <br>
+                <br>
+                <span class="d">&lt;div</span> <span class="cn">class=</span><span class="cv">"tips-mul tips-mul-left"</span><span class="d">&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="d">&lt;span&gt;</span><span class="v">气泡方向: 右</span><span class="d">&lt;/span&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="d">&lt;span</span> <span class="cn">class=</span><span class="cv">"tips-icon"</span><span class="d">&gt;</span><span class="d">&lt;/span&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="d">&lt;div</span> <span class="cn">class=</span><span class="cv">"tips-msg"</span><span class="d">&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="d">&lt;p&gt;</span><span class="d">&lt;span</span> <span class="cn">class=</span><span class="cv">"tips-msg-title"</span><span class="d">&gt;</span><span class="v">说明:</span><span class="d">&lt;/span&gt;</span><span class="v">文字超出部分以省略号表示<span class="d">&lt;/p&gt;</span></span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="d">&lt;/div&gt;</span><br>
+                <span class="d">&lt;/div&gt;</span>
+            </div>
+        </div>
+        <p>效果图: 鼠标悬浮可查看气泡效果</p>
+        <div class="examples" style="padding-bottom: 170px;">
+            <div class="tips-widgets" style="float: left;white-space: nowrap">
+                <div class="tips-mul">
+                    <span>气泡方向: 下</span>
+                    <span class="tips-icon"></span>
+                    <div class="tips-msg">
+                        <p><span class="tips-msg-title">钢厂:</span> 鞍钢朝阳</p>
+                        <p><span class="tips-msg-title">品类:</span> 热轧卷板</p>
+                        <p><span class="tips-msg-title">托盘服务商:</span> 五矿钢铁物流园  (东莞)股份有限公司有限公司</p>
+                        <p><span class="tips-msg-title">存放仓库:</span> 黄埔港</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tips-widgets" style="float: left;white-space: nowrap;margin-left: 60px;">
+                <div class="tips-mul tips-mul-left">
+                    <span>气泡方向: 右</span>
+                    <span class="tips-icon"></span>
+                    <div class="tips-msg">
+                        <p><span class="tips-msg-title">钢厂:</span> 鞍钢朝阳</p>
+                        <p><span class="tips-msg-title">品类:</span> 热轧卷板</p>
+                        <p><span class="tips-msg-title">托盘服务商:</span> 五矿钢铁物流园  (东莞)股份有限公司有限公司</p>
+                        <p><span class="tips-msg-title">存放仓库:</span> 黄埔港</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,12 +1,13 @@
 .radio {
   position relative;
   font-size 12px;
+  line-height 1;
   cursor pointer;
   color $color-65;
   & input {
     display none;
   }
-  & i {
+  & i,& .radio-icon {
     position absolute;
     width 12px;
     height 12px;
@@ -30,7 +31,7 @@
       opacity 0;
     }
   }
-  & span {
+  & span, & .radio-text {
     padding-left 18px;
   }
   &:hover {
@@ -47,29 +48,28 @@
       }
     }
   }
-}
-
-.disable-radio {
-  position relative;
-  font-size 12px;
-  pointer-events none;
-  color $color-C5;
-  & input {
-    display none;
-  }
-  & i {
-    position absolute;
-    width 12px;
-    height 12px;
-    top 50%;
-    margin-top -6px;
-    left 0;
-    b-border-radius(50%);
-    background-color $color-F5;
-    border 1px solid $color-C5;
-    b-box-sizing(border-box);
-  }
-  & span {
-    padding-left 18px;
+  &.disable-radio {
+    position relative;
+    font-size 12px;
+    pointer-events none;
+    color $color-C5;
+    & input {
+      display none;
+    }
+    & i {
+      position absolute;
+      width 12px;
+      height 12px;
+      top 50%;
+      margin-top -6px;
+      left 0;
+      b-border-radius(50%);
+      background-color $color-F5;
+      border 1px solid $color-C5;
+      b-box-sizing(border-box);
+    }
+    & span {
+      padding-left 18px;
+    }
   }
 }

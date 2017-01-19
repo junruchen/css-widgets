@@ -1,4 +1,4 @@
-iStyles(){
+iStyles() {
   position absolute;
   width 12px;
   height 12px;
@@ -9,41 +9,41 @@ iStyles(){
   border 1px solid $color-C5;
   b-box-sizing(border-box);
 }
+
 iCheckStyles() {
   background-color $color-base;
   border-color $color-base;
-  background-image url("../../img/checkbox-check.png");
+  background-image url("../css/widget/img/icon.png");
   background-repeat no-repeat;
-  background-position center;
-  background-size 8px;
+  background-position 0 0;
+  background-origin content-box;
+  padding 2px 1px;
 }
 
-.checkbox-widgets {
-  & .checkbox {
-    position relative;
-    cursor pointer;
-    color $color-65;
-    font-size 12px;
-    & input {
-      display none;
-    }
+.checkbox {
+  position relative;
+  cursor pointer;
+  color $color-65;
+  font-size 12px;
+  & input {
+    display none;
+  }
+  & i {
+    iStyles();
+  }
+  & span {
+    padding-left 18px;
+  }
+  &:hover {
+    color $color-base;
     & i {
-      iStyles();
-    }
-    & span {
-      padding-left 18px;
-    }
-    &:hover {
-      color $color-base;
-      & i {
-        border-color $color-base;
-      }
-    }
-    & input[type=checkbox]:checked + i {
-      iCheckStyles();
+      border-color $color-base;
     }
   }
-  & .disable-checkbox{
+  & input[type=checkbox]:checked + i {
+    iCheckStyles();
+  }
+  &.disable-checkbox {
     position relative;
     cursor pointer;
     pointer-events none;
@@ -60,44 +60,6 @@ iCheckStyles() {
       padding-left 18px;
     }
   }
-
 }
 
 
-.checkbox-widgets2 {
-  & .checkbox {
-    position relative;
-    cursor pointer;
-    color $color-65;
-    font-size 12px;
-    & input {
-      display none;
-    }
-    & i {
-      iStyles();
-    }
-    & span {
-      padding-left 18px;
-    }
-    &:hover {
-      color $color-base;
-      & i {
-        border-color $color-base;
-      }
-    }
-  }
-  & input {
-    display none;
-  }
-  & input[type=checkbox]:checked {
-    & + label > i {
-      iCheckStyles();
-    }
-    & + .checkbox-all{
-      & > i, & ~ label > i {
-        iCheckStyles();
-      }
-    }
-
-  }
-}

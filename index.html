@@ -2,39 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CSS-组件</title>
-    <link rel="stylesheet" href="assets/css/widget/widget-doc.css">
+    <title>CSS-汇总</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/widget.css">
+    <link rel="stylesheet" href="assets/css/feature.css">
+    <link rel="stylesheet" href="assets/css/funny.css">
 </head>
 <body>
 <div class="container">
-    <div style="height: 278px;width: 100%;background-color: #F1F8E9;text-align: center;padding-top: 60px;box-sizing: border-box;margin-bottom: 60px;">
+    <header>
         <h1>留给未来</h1>
-        <p>这里只有最最基础、最最简单的组件, 连基本的布局都没有...</p>
-        <p>组件样式代码存放-->widget.styl</p>
-    </div>
+        <p>这里只有最最基础、最最简单的一些常见常用小组件, 连基本的布局都没有...</p>
+        <p>组件样式代码存放-->widget.css</p>
+    </header>
     <div id="app">
         <div class="content">
             <router-view></router-view>
         </div>
-
         <div class="nav">
             <h2>Conponents</h2>
             <ul>
-                <li><router-link :to="{name: 'button'}"><h3>Bottons</h3></router-link></li>
-                <li><router-link :to="{name:'radio'}"><h3>Radio Button</h3></router-link></li>
-                <li><router-link :to="{name:'checkbox'}"><h3>Checkbox</h3></router-link></li>
-                <!--<li><router-link ><h3>Text input box</h3></router-link></li>
-                <li><router-link ><h3>Dropdow menu</h3></router-link></li>
-                <li><router-link ><h3>Tips</h3></router-link></li>
-                <li><router-link ><h3>Popover</h3></router-link></li>
-                <li><router-link ><h3>Table</h3></router-link></li>
-                <li><router-link ><h3>Pagination</h3></router-link></li>
-                <li><router-link ><h3>Tabs</h3></router-link></li>
-                <li><router-link ><h3>Progress Bar</h3></router-link></li>-->
+                <li><router-link to="/conponents/button"><h4>Button</h4></router-link></li>
+                <li><router-link to="/conponents/radio"><h4>Radio Button</h4></router-link></li>
+                <li><router-link to="/conponents/checkbox"><h4>Checkbox</h4></router-link></li>
+                <li><router-link to="/conponents/input"><h4>Text input box</h4></router-link></li>
+                <li><router-link to="/conponents/dropdown"><h4>Dropdown menu</h4></router-link></li>
+                <li><router-link to="/conponents/tips"><h4>Tips</h4></router-link></li>
+                <li><router-link to="/conponents/popover"><h4>Popover</h4></router-link></li>
+                <li><router-link to="/conponents/table"><h4>Table</h4></router-link></li>
+                <li><router-link to="/conponents/pagination"><h4>Pagination</h4></router-link></li>
+                <li><router-link to="/conponents/tabs"><h4>Tabs</h4></router-link></li>
+                <li><router-link to="/conponents/progress"><h4>Progress Bar</h4></router-link></li>
+            </ul>
+            <h2>Feature</h2>
+            <ul>
+                <li><router-link to="/feature/border"><h4>Border</h4></router-link></li>
+                <li><a href=""><h4>Background</h4></a></li>
+                <li><a href=""><h4>Shadow</h4></a></li>
+                <li><a href=""><h4>Transform</h4></a></li>
+                <li><a href=""><h4>Transition</h4></a></li>
+                <li><a href=""><h4>Animation</h4></a></li>
+            </ul>
+            <h2>Funny</h2>
+            <ul>
+                <li><router-link to="/funny/minions"><h4>Minions</h4></router-link></li>
+                <li><a><h4>Funny uncle</h4></a></li>
             </ul>
         </div>
-
     </div>
+
+    <footer>Junru 知识点汇总</footer>
 </div>
 <script src="build/common.js"></script>
 <script src="build/build.js"></script>

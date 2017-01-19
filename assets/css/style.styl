@@ -1,0 +1,192 @@
+@import "base/reset.styl"; //重置
+@import "base/methods.styl"; //方法
+@import "base/color.styl"; //颜色
+
+html, body {
+  color $color-35;
+}
+
+h1, h2, h3, h4, p {
+  margin-bottom 10px;
+}
+
+h1 {
+  font-weight 500;
+  font-size 36px;
+  margin-bottom 20px;
+}
+
+h2 {
+  font-weight 500;
+  font-size 24px;
+}
+
+h3 {
+  font-size 22px;
+}
+
+h4 {
+  font-size 18px;
+}
+
+p {
+  font-size 14px;
+  line-height 24px;
+  color $color-65;
+}
+
+.container {
+  margin 0 auto;
+}
+
+#app {
+  width 1070px;
+  margin 0 auto;
+  overflow hidden;
+  & .content {
+    width 780px;
+    float left;
+  }
+  & .nav {
+    color $color-45;
+    float right;
+    width 250px;
+    & ul li {
+      line-height 40px;
+      & .router-link-active h4 {
+        color $color-base;
+      }
+    }
+    & a {
+      & h4 {
+        color $color-45;
+        margin-bottom 0;
+        &:hover {
+          color $color-base;
+        }
+      }
+    }
+    & h2{
+      margin 0;
+      margin-top 10px;
+      &:first-child{
+        margin 0;
+      }
+    }
+  }
+}
+
+.point-text {
+  font-weight 300;
+  color $color-yellow-light;
+  & a{
+    color $color-yellow-light;
+    text-decoration underline;
+  }
+}
+
+.examples {
+  padding 30px;
+  border 1px solid $color-F5;
+  margin-bottom 40px;
+  overflow hidden;
+  & .popover-examples {
+    width 500px;
+    height 250px;
+    background-size 500px;
+    background-image url("../img/popover.png");
+    background-repeat no-repeat;
+  }
+  & .popover-msg-examples {
+    width 500px;
+    height 270px;
+    background-size 500px;
+    background-image url("../img/popover-msg.png");
+    background-repeat no-repeat;
+  }
+  & .border-error-examples {
+    width 600px;
+    height 300px;
+    background-size 600px;
+    background-image url("../img/border-em-1.png");
+    background-repeat no-repeat;
+  }
+  & .border-right-examples {
+    width 600px;
+    height 300px;
+    background-size 600px;
+    background-image url("../img/border-em-2.png");
+    background-repeat no-repeat;
+  }
+  & .border-examples {
+    width 200px;
+    height 200px;
+    background-size 200px;
+    background-image url("../img/border-em-3.png");
+    background-repeat no-repeat;
+  }
+  &.feature{
+    margin-bottom 15px;
+  }
+}
+
+
+.code {
+  font-size 16px;
+  & .d {
+    color #2f6f9f;
+  }
+  & .cn {
+    color #4f9fcf;
+  }
+  & .cv {
+    color #d44950;
+  }
+  & .v {
+    font-size 14px;
+  }
+  & .examples {
+    margin-bottom 15px;
+  }
+  &.feature{
+    .examples {
+      margin-bottom 40px;
+    }
+  }
+}
+
+header {
+  height: 278px;
+  width: 100%;
+  background-color: #F1F8E9;
+  text-align: center;
+  padding-top: 60px;
+  box-sizing: border-box;
+  margin-bottom: 60px;
+}
+
+footer {
+  height: 50px;
+  width: 100%;
+  background-color: #F1F1F1;
+  text-align: center;
+  font-size 16px;
+  line-height: 50px;
+  box-sizing: border-box;
+}
+
+//feature
+.border-item {
+  padding 10px;
+  width 200px;
+  height 100px;
+  background $color-white;
+  b-box-sizing(border-box);
+}
+
+.border-content{
+  width 200px;
+  background-image url("../css/feature/img/border-bg.jpg");
+}
+
+
