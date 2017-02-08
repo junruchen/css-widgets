@@ -8,10 +8,22 @@
         <p>border-radius 圆角的使用</p>
         <p>border-image 边框背景详解</p>
         <h3>透明边框</h3>
+        <p>要求: 给内部盒子设置一个透明边框, 可以看到外层盒子的背景。</p>
+        <p>dom结构:</p>
+        <div class="code feature">
+            <div class="examples">
+                <span class="d">&lt;div </span><span class="cn">class=</span><span class="cv">"border-box"</span><span
+                    class="d">&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="d">&lt;div </span><span class="cn">class=</span><span class="cv">"border-item"</span><span
+                    class="d">&gt;</span><span class="v">内部盒子区</span><span class="d">&lt;/div&gt;</span><br>
+                <span class="d">&lt;/div&gt;</span>
+            </div>
+        </div>
         <p>先看效果图:</p>
         <div class="examples feature">
             <div class="border-content">
-                <div class="border-item border-transparent"></div>
+                <p>.border-box</p>
+                <div class="border-item border-transparent"><p>.border-item 内部盒子区</p></div>
             </div>
         </div>
         <p>浏览器默认从边框外沿剪裁背景图, 所以为了使边框透明, 需将浏览器的剪裁范围缩小到内边距的外沿, 而<span class="point-text"> background-clip </span>属性正好可以实现此效果。
@@ -21,9 +33,18 @@
         <p>代码示例</p>
         <div class="code feature">
             <div class="examples">
-                <span class="cv">border: </span><span class="d">15px solid rgba(255,255,255,0.5) ;</span><br>
-                <span class="cv">background: </span><span class="d">white ;</span><br>
-                <span class="cv">background-clip: </span><span class="d">padding-box ;</span>
+                .border-box{</span> <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="cv">backrgound-image: </span><span
+                    class="d">url(image.png) ;</span><br>
+                }<br>
+
+                .border-item{ <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="cv">border: </span><span class="d">15px solid rgba(255,255,255,0.5) ;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="cv">background: </span><span class="d">white ;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="cv">background-clip: </span><span
+                    class="d">padding-box ;</span><br>
+                }
+
             </div>
         </div>
 
@@ -59,17 +80,16 @@
         </div>
 
         <h3>border-radius 圆角的使用</h3>
-        <p>IE9+、Firefox 4+、Chrome、Safari 5+ 以及 Opera 支持 border-radius 属性。为支持低版本, 最好增加带有-webkit-前缀的写法。</p>
+        <p>IE9+、Firefox 4+、Chrome、Safari 5+ 以及 Opera 支持 border-radius 属性。</p>
+        <p><span class="point-text">border-radius</span> 是一个简写属性,
+            分别指定左上角[border-top-left-radius]、右上角[border-top-right-radius]、右下角[border-bottom-right-radius]、左下角[border-bottom-left-radius]的圆角半径。
+        </p>
         <p><span class="point-text">border-radius</span> 可以分别设置水平半径和垂直半径, 以 "/" 分隔, 水平和垂直半径都可以设置1-4个值,分别指定四个角的半径,
-            可以是具体的长度值也可以是百分比。<br> 如: <span class="point-text">border-radius: 50% 40% / 10% 20%;</span> 斜线"/"之前的表示水平半径,
-            之后的表示垂直半径。</p>
+            可以是具体的长度值也可以是百分比。<br> 如: <span class="point-text">border-radius: 50% / 20%;</span> 斜线"/"之前的表示四个角的水平半径均为50%, 之后的表示四个角的垂直半径均为20%。</p>
         <p>不论是水平半径还是垂直半径都遵循一下<span class="point-text">规则</span>: <br>
             如果只设置一个值，将用于全部的四个角; <br>
             如果设置两个值，第一个用于左上角、右下角，第二个用于右上角、左下角;<br>
             如果设置三个值，第一个用于左上角，第二个用于右上角和左下角，第三个用于右下角。[可以联想margin]<br>
-        </p>
-        <p><span class="point-text">border-radius</span> 是一个简写属性,
-            分别指定左上角[border-top-left-radius]、右上角[border-top-right-radius]、右下角[border-bottom-right-radius]、左下角[border-bottom-left-radius]的圆角半径。
         </p>
 
         <h4>自适应椭圆的实现</h4>
@@ -161,7 +181,7 @@
             <span class="point-text">border-image-source</span>、<span class="point-text">border-image-slice</span>、<span
                     class="point-text">border-image-width</span>、<span
                     class="point-text">border-image-outset</span>、<span class="point-text">border-image-repeat</span>。
-            属性之前可用"/"分隔。</p>
+            属性之前用"/"分隔。</p>
         <p>1、border-image-source</p>
         <p>取值: <span class="point-text">none | image</span> ; 当值为none时, 会自动使用<span
                 class="point-text"> border-style </span>的值。</p>

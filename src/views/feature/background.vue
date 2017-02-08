@@ -1,0 +1,560 @@
+<template>
+    <div class="background-box" v-cloak>
+        <h1>Background</h1>
+        <p>background属性的简写用法, 常见背景属性的介绍以及渐变色的应用</p>
+        <h3>目录</h3>
+        <p>background属性的简写用法</p>
+        <p>常见背景属性介绍</p>
+        <p>渐变色的应用</p>
+        <h3>background属性</h3>
+        <p>background简写属性在一个声明中可设置所有的背景属性。</p>
+        <p>可设置属性如下: <br>
+            <span class="point-text">background-image:</span> 设置背景图像, 可以是真实的图片路径, 也可以是创建的渐变背景;<br>
+            <span class="point-text">background-position:</span> 设置背景图像的位置;<br>
+            <span class="point-text">background-size:</span> 设置背景图像的大小;<br>
+            <span class="point-text">background-repeat:</span> 指定背景图像的铺排方式;<br>
+            <span class="point-text">background-attachment:</span> 指定背景图像是滚动还是固定;<br>
+            <span class="point-text">background-origin:</span> 设置背景图像显示的原点[background-position相对定位的原点];<br>
+            <span class="point-text">background-clip:</span> 设置背景图像向外剪裁的区域;<br>
+            <span class="point-text">background-color:</span> 指定背景颜色
+        </p>
+        <p>简写的顺序如下: <br>
+            <span class="point-text">bg-color || bg-image || bg-position [ / bg-size]? || bg-repeat || bg-attachment || bg-origin || bg-clip</span>
+        </p>
+        <p>顺序并非固定, 但是要注意: <br>
+            1、background-position 和 background-size 属性, 之间需使用/分隔, 且position值在前, size值在后。<br>
+            2、如果同时使用 background-origin 和 background-clip 属性, origin属性值需在clip属性值之前, 如果origin与clip属性值相同, 则可只设置一个值。
+        </p>
+        <p>代码示例:</p>
+        <div class="code">
+            <div class="examples">
+                <span class="cv">background: </span><span class="d">url("image.png")  10px 20px/100px no-repeat content-box;</span><br>
+            </div>
+        </div>
+        <p><span class="point-text">background</span>是一个复合属性, 可设置多组属性, 每组属性间使用逗号分隔, 其中背景颜色不能设置多个且只能放在最后一组。</p>
+        <p>如设置的多组属性背景图像之间存在重叠, 则前面的背景图像会覆盖在后面的背景图像上。</p>
+        <p>代码示例:</p>
+        <div class="code">
+            <div class="examples">
+                <span class="cv">padding:</span><span class="d"> 10px;</span><br>
+                <span class="cv">background:</span><span class="d"> url("image.png")  0% 0%/60px 60px no-repeat padding-box,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url("image.png")  40px 10px/110px 110px no-repeat content-box,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url("image.png")  140px 40px/200px 100px no-repeat content-box #58a;<br>
+            </span><br>
+            </div>
+        </div>
+        <p>效果图如下:</p>
+        <div class="examples">
+            <div class="bg-item bg-abbreviated"></div>
+        </div>
+
+        <h3>常见背景属性</h3>
+        <h4>background-position</h4>
+        <p><span class="point-text">background-position </span>属性用来设置背景图像的位置, 默认值: <span class="point-text">0% 0%</span>,
+            效果等同于 <span class="point-text">left top</span>。</p>
+        <p>取值说明: <br>
+            1、 如果设置一个值, 则该值作用在横坐标上, 纵坐标默认为50%(即center) ;<br>
+            2、 如果设置两个值, 则第一个值作用于横坐标, 第二个值作用于纵坐标, 取值可以是方位关键字[left\top\center\right\bottom], 如<span class="point-text"> background-position: left center ;  </span>
+            也可以是百分比或长度, 百分比和长度可为设置为负值, 如: <span class="point-text">background-position: 10% 30px ;</span><br>
+            3、 另外css3支持3个值或者4个值, 注意如果设置3个或4个值, <span class="point-text">偏移量前必须有关键字</span>, 如:<span class="point-text"> background-position: right 20px bottom 30px;</span>
+        </p>
+        <p>示例图如下:</p>
+        <div class="examples feature">
+            <p>background-position right 20px bottom 30px;</p>
+            <div class="bg-item bg-position"></div>
+        </div>
+        <p>也可以使用<span class="point-text"> background-position-x </span>或<span
+                class="point-text"> background-position-y </span>来分别设置横坐标或纵坐标的偏移量。</p>
+        <p>注意: 当使用 background-position-x 以及 background-position-y 时, 需考虑Firefox兼容性的问题。</p>
+        <h4>background-size</h4>
+        <p>background-size属性用来指定背景图像的大小。默认值: <span class="point-text">auto</span></p>
+        <p>取值说明: <br>
+            1、 可使用<span class="point-text">长度值</span>或<span class="point-text">百分比</span>指定背景图像的大小, 值不能为负值。如果设置一个值,
+            则该值用于定义图像的宽度, 图像的高度为默认值 auto, 根据宽度进行等比例缩放; 如果设置两个值, 则分别作用于图像的宽和高。<br>
+            2、 <span class="point-text">auto</span> 默认值, 即图像真实大小。<br>
+            3、 <span class="point-text">cover</span> 将背景图像等比缩放到完全覆盖容器, 背景图像有可能超出容器。(即当较短的边等于容器的边时, 停止缩放) <br>
+            4、 <span class="point-text">contain</span> 将背景图像等比缩放到宽度或高度与容器的宽度或高度相等, 背景图像始终被包含在容器内。(即当较长的边等于容器的边时, 停止缩放)
+        </p>
+        <p>示例图如下(图片: 640*448, 容器: 200*200):</p>
+        <div class="examples">
+            <div style="float: left; margin-right: 50px;">
+                <p>background-size: cover</p>
+                <div class="bg-item bg-size"></div>
+            </div>
+            <div style="float: left;">
+                <p>background-size: contain</p>
+                <div class="bg-item bg-size2"></div>
+            </div>
+        </div>
+        <h4>background-repeat</h4>
+        <p><span class="point-text">background-repeat </span>属性用来设置背景图像铺排填充方式, 默认值: <span
+                class="point-text">repeat </span>。</p>
+        <p>取值说明: <br>
+            1、 <span class="point-text">repeat-x </span>表示横向上平铺, 相当于设置两个值 <span
+                    class="point-text">repeat no-reapeat</span>; <br>
+            2、<span class="point-text">repeat-y </span>表示纵向上平铺, 相当于设置两个值 <span
+                    class="point-text">no-repeat repeat</span>; <br>
+            3、<span class="point-text">repeat </span>表示横向纵向上均平铺; <br>
+            4、<span class="point-text">no-repeat </span>表示不平铺; <br>
+            5、<span class="point-text">round </span>表示背景图像自动缩放直到适应且填充满整个容器。 注意: 当设置为<span
+                    class="point-text"> round </span>时, <span class="point-text">background-size </span>的 <span
+                    class="point-text">cover</span> 和 <span class="point-text">contain</span> 属性失效。<br>
+            6、<span class="point-text">space </span>表示背景图像以相同的间距平铺且填充满整个容器或某个方向. 注意: 当 <span class="point-text">background-size </span>设置为
+            <span class="point-text">cover</span> 和 <span class="point-text">contain</span> 时, <span class="point-text">background-rapeat</span>
+            的 <span class="point-text">space</span> 属性失效。<br>
+        </p>
+        <p>注意, background-repeat 的 round/space 属性, 部分Firefox版本不支持。</p>
+        <p>示例图:</p>
+        <div class="examples">
+            <div style="float: left; margin-right: 50px;">
+                <p>background-repeat: repeat-y</p>
+                <div class="bg-item bg-repeat"></div>
+            </div>
+            <div style="float: left;">
+                <p>background-repeat: space</p>
+                <div class="bg-item bg-repeat2"></div>
+            </div>
+        </div>
+        <h4>background-origin</h4>
+        <p>用于设置 <span class="point-text">background-position</span> 定位时参考的原点, 默认值 <span
+                class="point-text">padding-box</span> , 另外还有两个值: <span class="point-text">border-box</span> 和 <span
+                class="point-text">content-box</span>。</p>
+        <p>代码示例:</p>
+        <div class="code">
+            <div class="examples">
+                <span class="cv">border: </span><span class="d">10px solid #58A;</span><br>
+                <span class="cv">padding: </span><span class="d">20px;</span><br>
+                <span class="cv">background-position: </span><span class="d">10px 20px;</span><br>
+            </div>
+        </div>
+        <p>示例图:</p>
+        <div class="examples">
+            <div style="float:left;margin-right: 20px;">
+                <p>background-origin: padding-box <br>原点位于padding区域（含padding）<br>左上角</p>
+                <div class="bg-item bg-origin"></div>
+            </div>
+            <div style="float:left;margin-right: 30px;">
+                <p>background-origin: border-box <br>原点位于border区域（含border）<br>左上角</p>
+                <div class="bg-item bg-origin bg-origin1"></div>
+            </div>
+            <div style="float:left;">
+                <p>background-origin: content-box <br>原点位于content区域左上角<br> <br></p>
+                <div class="bg-item bg-origin bg-origin2"></div>
+            </div>
+        </div>
+        <h4>background-clip</h4>
+        <p>用于指定背景图像向外裁剪的区域, 默认值 <span class="point-text">border-box</span> , 另外还有两个值: <span class="point-text">padding-box</span>
+            和 <span class="point-text">content-box</span>。</p>
+        <p>代码示例:</p>
+        <div class="code">
+            <div class="examples">
+                <span class="cv">background-color: </span><span class="d">#58a;</span><br>
+                <span class="cv">background-image: </span><span class="d">url("image.png");</span><br>
+                <span class="cv">background-repeat: </span><span class="d">no-repeat;</span><br>
+                <span class="cv">background-size: </span><span class="d">120px 100px;</span><br>
+                <span class="cv">border: </span><span class="d">10px dashed #fb3;</span><br>
+                <span class="cv">padding: </span><span class="d">30px;</span><br>
+                <span class="cv">background-origin: </span><span class="d">border-box;</span><br>
+            </div>
+        </div>
+        <p>示例图:</p>
+        <p>注意: 由于<span class="point-text"> background-origin </span>的默认值为 <span class="point-text">padding-box</span>,
+            即背景图像<span class="point-text"> background-image </span>的默认定位<span
+                    class="point-text"> background-position </span>参考的原点为 <span class="point-text">padding</span>区域是[包含padding],
+            所以为了更好的了解<span class="point-text"> background-clip </span>几个属性值的特性, 可将<span class="point-text"> background-origin </span>设置为<span
+                    class="point-text"> border-box </span>。</p>
+        <div class="examples">
+            <div style="float:left;margin-right: 40px;">
+                <p>background-clip: border-box <br>开始剪裁背景被剪裁到外边框</p>
+                <div class="bg-item bg-clip"></div>
+            </div>
+            <div style="float:left;margin-right: 35px;">
+                <p>background-clip: padding-box <br>背景被剪裁到内边距框</p>
+                <div class="bg-item bg-clip bg-clip1"></div>
+            </div>
+            <div style="float:left;">
+                <p>background-clip: content-box <br>从content区域开始剪裁</p>
+                <div class="bg-item bg-clip bg-clip2"></div>
+            </div>
+        </div>
+        <h3>渐变图像</h3>
+        <p>在网页设计中, 各种尺寸、颜色、角度的条纹图案无处不在, 下面就来介绍一下如何使用CSS来创建条纹图案。</p>
+        <p>利用CSS3新增的<span class="point-text"> linear-gradient()  repeating-linear-gradient()  radial-gradient()  repeating-radial-gradient() </span>属性,
+            可实现各种意想不到的渐变图像。
+        </p>
+        <p>各种渐变效果图:</p>
+        <div class="examples">
+            <div class="bg-preview"></div>
+        </div>
+        <h4>线性渐变 linear-gradient()</h4>
+        <p>第一个参数: 可不写, 默认值为 <span class="point-text">to bottom</span> (即180%), 用来指定渐变的方向, 可是是具体的角度值, 也可以直接指定方位<span
+                class="point-text"> to left/
+            to right/ to top/ to bottom</span>。</p>
+        <p>为实现渐变, 还需要至少定义两个颜色结点, 每个颜色节点可由两个参数组成, [颜色值 位置值, 颜色值 位置值, ...], 其中颜色值为必填项, 位置值可为长度, 也可以是百分比, 非必填项。<br>如: <span
+                class="point-text">linear-gradient(red 30%, blue 80%); </span>表示: 容器顶部30%的区域被填充为红色实色,
+            容器中间50%的高度区域被填充为从红色到蓝色的渐变色, 容器底部20%区域被填充为蓝色实色。</p>
+        <p>各个参数之间只用逗号分隔。</p>
+        <h5>实现简单的渐变背景</h5>
+        <p>简单渐变示例:</p>
+        <div class="examples feature">
+            <div style="float: left;margin-right: 20px;">
+                <div class="bg-item bg-gradient"></div>
+                <p>图一</p>
+            </div>
+            <div style="float: left;margin-right: 20px;">
+                <div class="bg-item bg-gradient1"></div>
+                <p>图二</p>
+            </div>
+            <div style="float: left;margin-right: 20px;">
+                <div class="bg-item bg-gradient2"></div>
+                <p>图三</p>
+            </div>
+        </div>
+        <p>代码示例:</p>
+        <div class="code feature">
+            <div class="examples">
+                <span class="v">图一:</span>
+                <span class="cv">background: </span><span class="d">linear-gradient(#58a, #fb3);</span><br>
+                <span class="v">图二:</span>
+                <span class="cv">background: </span><span class="d">linear-gradient(45deg, #58a, #fb3);</span><br>
+                <span class="v">图三:</span>
+                <span class="cv">background: </span><span
+                    class="d">linear-gradient(to right, #58a 20%, #fb3 60%);</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="v">渐变填充区域为容器中间40%的高度区域, 其他区域填充的颜色为实色。</span><br>
+            </div>
+        </div>
+        <h5>实现条纹效果</h5>
+        <p>当<span class="point-text">相邻</span>两个颜色的位置值相同时, 颜色之间会产生无限小的过渡区域。其产生的效果和条纹一样。</p>
+        <p>效果图:</p>
+        <div class="examples feature">
+            <div style="float: left;margin-right: 20px;">
+                <div class="bg-item bg-gradient3"></div>
+                <p>图一</p>
+            </div>
+            <div style="float: left;margin-right: 20px;">
+                <div class="bg-item bg-gradient4"></div>
+                <p>图二</p>
+            </div>
+            <div style="float: left;margin-right: 20px;">
+                <div class="bg-item bg-gradient5"></div>
+                <p>图三</p>
+            </div>
+        </div>
+        <p>代码示例:</p>
+        <div class="code">
+            <div class="examples">
+                <span class="v">图一:</span>
+                <span class="cv">background: </span><span class="d">linear-gradient(#58a 50%, #fb3 50%);</span><br>
+                <span class="v">图二:</span>
+                <span class="cv">background: </span><span class="d">linear-gradient(#58a 33%, #fb3 33%, #fb3 66%, #e45b5a 66%);</span><br>
+                <span class="v">图三:</span>
+                <span class="cv">background: </span><span class="d">linear-gradient(#58a 40%, #fb3 0);</span><br>
+            </div>
+        </div>
+        <p><span class="point-text">CSS图像(第三版)规范:</span> 如果某个色标的位置值比整个列表中在它之前的色标的位置值都要小,
+            则该色标的位置值会被设置为它前面所有色标位置值的最大值。<br>
+            所以上述示例中, 图三第二个颜色的位置值 0 即表示 40%; 图二中代码也可以替换为: <span class="point-text">linear-gradient(#58a 33%, #fb3 0, #fb3 66%, #e45b5a 0);</span>
+        </p>
+        <h5>实现条纹背景</h5>
+        <p>刚刚已经实现了简单的条纹效果, 接下来实现简单的条纹背景, 这里需要借助<span class="point-text"> background-size </span>来控制每一块条纹背景的大小, 并且<span
+                class="point-text"> background-repeat </span>应该设置为<span class="point-text"> repeat</span>。</p>
+        <p>效果图:</p>
+        <div class="examples feature">
+            <div style="float: left;margin-right: 60px;">
+                <div class="bg-item bg-gradient6"></div>
+                <p>图一</p>
+            </div>
+            <div style="float: left;">
+                <div class="bg-item bg-gradient7"></div>
+                <p>图二</p>
+            </div>
+        </div>
+        <p>代码示例:</p>
+        <div class="code feature">
+            <div class="examples">
+                <span class="v">图一:</span><br>
+                <span class="cv">background: </span><span class="d">linear-gradient(#58a 50%, #fb3 0);</span><br>
+                <span class="cv">background-size: </span><span class="d">100% 40px;</span><br>
+                <span class="v">图二:</span><br>
+                <span class="cv">background: </span><span class="d">linear-gradient(to right, #58a 33%, #fb3 0, #fb3 66%, #e45b5a 0);</span><br>
+                <span class="cv">background-size: </span><span class="d">50px 100%;</span>
+            </div>
+        </div>
+        <h5>斜向条纹背景的实现</h5>
+        <p>如果只是简单的设置一个角度, 是不能实现斜向条纹背景的, 如下图所示:</p>
+        <p>图一将渐变条纹旋转了45度, 图二设置切片大小后进行重复, 并不能实现斜向条纹背景。</p>
+        <div class="examples feature">
+            <div style="float: left;margin-right: 20px;">
+                <div class="bg-item bg-gradient8"></div>
+                <p>图一</p>
+            </div>
+            <div style="float: left;margin-right: 20px;">
+                <div class="bg-item bg-gradient9"></div>
+                <p>图二</p>
+            </div>
+        </div>
+        <p>代码示例:</p>
+        <div class="code">
+            <div class="examples">
+                <span class="v">图一:</span><br>
+                <span class="cv">background: </span><span class="d">linear-gradient(45deg, #58a 50%, #fb3 0);</span><br>
+                <span class="v">图二:</span><br>
+                <span class="cv">background: </span><span class="d">linear-gradient(45deg, #58a 50%, #fb3 0);</span><br>
+                <span class="cv">background-size: </span><span class="d">50px 50px;</span>
+            </div>
+        </div>
+        <p>为了实现斜向条纹背景, 联想使用位图生成条纹的方法, 将切片设置称为四条条纹, 如下图所示:</p>
+        <div class="examples feature">
+            <div style="float: left;margin-right: 20px;">
+                <div class="bg-item bg-gradient10"></div>
+                <p>图一</p>
+            </div>
+            <div style="float: left;margin-right: 20px;">
+                <div class="bg-item bg-gradient11"></div>
+                <p>图二</p>
+            </div>
+        </div>
+        <p>代码示例:</p>
+        <div class="code">
+            <div class="examples">
+                <span class="v">图一:</span><br>
+                <span class="cv">background: </span><span class="d">linear-gradient(45deg, #58a 25%, #fb3 0, #fb3 50%, #58a 0, #58a 75% #fb3 0);</span><br>
+                <span class="v">图二:</span><br>
+                <span class="cv">background: </span><span class="d">linear-gradient(45deg, #58a 25%, #fb3 0, #fb3 50%, #58a 0, #58a 75% #fb3 0);</span><br>
+                <span class="cv">background-size: </span><span class="d">50px 50px;</span>
+            </div>
+        </div>
+        <p>上述的方法有局限性, 如果想实现30度或者其他角度的斜向条纹, 使用刚刚的方法效果则会很糟糕, 如下图:</p>
+        <div class="examples feature">
+            <div style="float: left;margin-right: 20px;">
+                <div class="bg-item bg-gradient12"></div>
+            </div>
+        </div>
+        <div class="code feature">
+            <div class="examples">
+                <span class="cv">background: </span><span class="d">linear-gradient(30deg, #58a 25%, #fb3 0, #fb3 50%, #58a 0, #58a 75% #fb3 0);</span><br>
+            </div>
+        </div>
+        <h5>各种角度的斜向条纹</h5>
+        <p>如果想实现各种角度的斜向条纹, CSS3提供了很好的方法, <span class="point-text"> linear-gradient() </span>的超级版<span
+                class="point-text"> repeating-linear-gradient() </span>。</p>
+        <h4>repeating-linear-gradient()</h4>
+        <p>用重复的线性渐变创建图像, 语法与 linear-gradient() 相同。</p>
+        <div class="examples feature">
+            <div style="float: left;margin-right: 20px;">
+                <div class="bg-item bg-gradient13"></div>
+                <p>图一</p>
+            </div>
+            <div style="float: left;margin-right: 20px;">
+                <div class="bg-item bg-gradient14"></div>
+                <p>图二</p>
+            </div>
+            <div style="float: left;margin-right: 20px;">
+                <div class="bg-item bg-gradient15"></div>
+                <p>图三</p>
+            </div>
+        </div>
+        <p>代码示例:</p>
+        <div class="code">
+            <div class="examples">
+                <span class="v">图一:</span><br>
+                <span class="cv">background: </span><span class="d">repeating-linear-gradient(45deg, #58a, #58a 10px, #fb3 0, #fb3 20px);</span><br>
+                <span class="v">图二:</span><br>
+                <span class="cv">background: </span><span class="d">repeating-linear-gradient(70deg, #58a, #58a 15px, #fb3 0, #fb3 30px, #e45b5a 0, #e45b5a 45px);</span><br>
+                <span class="v">图三:</span><br>
+                <span class="cv">background: </span><span class="d">repeating-linear-gradient(30deg, #58a, #58a 20px, #fb3 0, #fb3 40px);</span>
+            </div>
+        </div>
+        <p>使用<span class="point-text"> repeating-linear-gradient() </span>的好处是, 不需要借助<span class="point-text"> background-size </span>控制大小,
+            而且角度可以随意设置。</p>
+        <p>这里需要注意: 使用<span class="point-text"> repeating-linear-gradient() </span>实现渐变时, 用法与<span class="point-text"> linear-gradient() </span>有一点点不同。repeating-linear-gradient()
+            必须明确指定每一个颜色的范围值, 而 linear-gradient() 可以适当省略, 详解如下:</p>
+        <p>如: 实现一个简单的黄蓝渐变, 渐变范围为容器中间60%区域。</p>
+        <p>效果图:</p>
+        <div class="examples feature">
+            <div class="bg-item bg-gradient16"></div>
+        </div>
+        <p>代码示例:</p>
+        <div class="code">
+            <div class="examples">
+                <span class="v">使用<span class="point-text"> linear-gradient() </span>实现(可简写):</span><br>
+                <span class="cv">background: </span><span class="d">linear-gradient(#fb3 20%, #58a 80%);</span><br>
+                <span class="v">或者:</span><br>
+                <span class="cv">background: </span><span
+                    class="d">linear-gradient(#fb3, #fb3 20%, #58a 80%);</span><br>
+                <span class="v">或者:</span><br>
+                <span class="cv">background: </span><span class="d">linear-gradient(#fb3, #fb3 20%, #58a 80%, #58a 100%);</span><br>
+                <br>
+                <span class="v">使用<span
+                        class="point-text"> repeating-linear-gradient() </span>实现(必须写明每一个颜色范围值):</span><br>
+                <span class="cv">background: </span><span class="d">repeating-linear-gradient(#fb3, #fb3 20%, #58a 80%, #58a 100%);</span><br>
+            </div>
+        </div>
+        <h4>其他条纹背景的实现</h4>
+        <p>效果图:</p>
+        <div class="examples feature">
+            <div style="float: left;margin-right: 20px;">
+                <div class="bg-item bg-gradient17"></div>
+                <p>图一</p>
+            </div>
+            <div style="float: left;margin-right: 20px;">
+                <div class="bg-item bg-gradient18"></div>
+                <p>图二</p>
+            </div>
+            <div style="float: left;margin-right: 20px;">
+                <div class="bg-item bg-gradient19"></div>
+                <p>图三</p>
+            </div>
+
+            <div style="float: left;margin-right: 20px; margin-top: 20px;">
+                <div class="bg-item bg-gradient20"></div>
+                <p>图四</p>
+            </div>
+            <div style="float: left;margin-right: 20px;margin-top: 20px;">
+                <div class="bg-item bg-gradient21"></div>
+                <p>图五</p>
+            </div>
+            <div style="float: left;margin-right: 20px;margin-top: 20px;">
+                <div class="bg-item bg-gradient22"></div>
+                <p>图六</p>
+            </div>
+        </div>
+        <p>代码示例:</p>
+        <div class="code feature">
+            <div class="examples">
+                <span class="v">图一:</span><br>
+                <span class="cv">background: </span><span class="d">linear-gradient(0, rgba(200, 0, 0, 0.5) 50%, transparent 0), <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;linear-gradient(90deg, rgba(200, 0, 0, 0.5) 50%, transparent 0);</span><br>
+                <span class="cv">background-size: </span><span class="d">20px;</span><br><br>
+                <span class="v">图二:</span><br>
+                <span class="cv">background: </span><span class="d">linear-gradient(0, rgba(200, 0, 0, 0.5) 1px, transparent 0),<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;linear-gradient(90deg, rgba(200, 0, 0, 0.5) 1px, transparent 0);</span><br>
+                <span class="cv">background-size: </span><span class="d">20px;</span><br><br>
+                <span class="v">图三:</span><br>
+                <span class="cv">background: </span><span class="d">linear-gradient(0, #fff 1px, transparent 0), <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;linear-gradient(90deg, #fff 1px, transparent 0),<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;linear-gradient(0, #fff 4px, transparent 0), <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;linear-gradient(90deg, #fff 4px, transparent 0), #58a;</span><br>
+                <span class="cv">background-size: </span><span class="d">20px, 20px, 40px, 40px;</span><br><br><br>
+                <span class="v">图四:</span><br>
+                <span class="cv">background: </span><span
+                    class="d">linear-gradient(-125deg, #fff 15px, #58a 0);</span><br><br>
+                <span class="v">图五:</span><br>
+                <span class="cv">background: </span><span class="d">linear-gradient(125deg, #fff 15px, #58a 0), <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;linear-gradient(-125deg, #fff 15px, #58a 0);</span><br>
+                <span class="cv">background-size: </span><span class="d">50% 100%;</span><br>
+                <span class="cv">background-position: </span><span class="d">left, right;</span><br>
+                <span class="cv">background-repeat: </span><span class="d">no-repeat;</span><br><br>
+                <span class="v">图六:</span><br>
+                <span class="cv">background: </span><span class="d">linear-gradient(125deg, #fff 15px, #58a 0), <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;linear-gradient(-125deg, #fff 15px, #58a 0),<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;linear-gradient(45deg, #fff 15px, #58a 0), <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;linear-gradient(-45deg, #fff 15px, #58a 0);</span><br>
+                <span class="cv">background-size: </span><span class="d">50% 50%;</span><br>
+                <span class="cv">background-position: </span><span class="d">top left, top right, bottom left, bottom right;</span><br>
+                <span class="cv">background-repeat: </span><span class="d">no-repeat;</span>
+            </div>
+        </div>
+        <h4>径向渐变 radial-gradient()</h4>
+        <p>第一组参数用来指定渐变的类型[shape]、渐变的半径长度[size]、以及圆心的位置[position]。 <br>
+            shape 指定渐变的类型<span class="point-text"> circle[圆形渐变] </span>和<span class="point-text"> ellopse[椭圆形渐变] </span>;<br>
+            size 半径长度为具体的长度值, 其中椭圆形渐变的半径长度可以用百分比。<br>
+            也可以用以下四种指定半径长度:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="point-text">closest-side：</span>半径长度为从圆心到离圆心最近的边<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="point-text">closest-corner：</span>半径长度为从圆心到离圆心最近的角<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="point-text">farthest-side：</span>半径长度为从圆心到离圆心最远的边<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="point-text">farthest-corner：</span>半径长度为从圆心到离圆心最远的角<br>
+            position 确定圆心的位置, 值必须跟在<span class="point-text"> at </span>后。如果提供2个参数，第一个表示横坐标，第二个表示纵坐标；如果只提供一个，第二值默认为50%，即center
+            位置可以是具体的长度也可以是百分比。另外也可以用方位表示。横坐标可取的方位值有<span class="point-text">left、center、right</span>, 纵坐标可取的方位值有<span
+                    class="point-text">top、center、bottom</span>。
+        </p>
+        <p>注意: 当渐变类型为 <span class="point-text"> circle[圆形渐变] </span>时, 只能指定一个size值, 即<span class="point-text">直径</span>;
+            当渐变类型为 <span class="point-text"> ellopse[椭圆形渐变] </span>时, 需要指定两个个size值, 即<span
+                    class="point-text">水平半径, 垂直半径</span>。</p>
+        <p>为实现渐变, 还需要至少定义两个颜色结点, 每个颜色节点可由两个参数组成, [颜色值 位置值, 颜色值 位置值, ...], 其中颜色值为必填项, 位置值可为长度, 也可以是百分比, 非必填项。<br>如: <span
+                class="point-text">radial-gradient(red 30%, blue 80%); </span></p>
+        <p>各个参数之间只用逗号分隔。</p>
+        <p>简单的径向渐变如下图示例:</p>
+        <div class="examples feature">
+            <div style="float: left;margin-right: 20px;">
+                <div class="bg-item bg-gradient23"></div>
+                <p>图一</p>
+            </div>
+            <div style="float: left;margin-right: 20px;">
+                <div class="bg-item bg-gradient24"></div>
+                <p>图二</p>
+            </div>
+            <div style="float: left;margin-right: 20px;">
+                <div class="bg-item bg-gradient25"></div>
+                <p>图三</p>
+            </div>
+            <div style="float: left;margin-right: 20px; margin-top: 20px;">
+                <div class="bg-item bg-gradient26"></div>
+                <p>图四</p>
+            </div>
+            <div style="float: left;margin-right: 20px;margin-top: 20px;">
+                <div class="bg-item bg-gradient27"></div>
+                <p>图五</p>
+            </div>
+            <div style="float: left;margin-right: 20px;margin-top: 20px;">
+                <div class="bg-item bg-gradient28"></div>
+                <p>图六</p>
+            </div>
+        </div>
+        <p>代码示例:</p>
+        <div class="code">
+            <div class="examples">
+                <span class="v">图一:</span><br>
+                <span class="cv">background: </span><span class="d">radial-gradient(#58A, #FB3)</span><br>
+                <span class="v">图二:</span><br>
+                <span class="cv">background: </span><span class="d">radial-gradient(50px, #58A, #FB3)</span><br>
+                <span class="v">图三:</span><br>
+                <span class="cv">background: </span><span
+                    class="d">radial-gradient(70px, #58A, #FB3, #e45b5a)</span><br><br>
+                <span class="v">图四:</span><br>
+                <span class="cv">background: </span><span
+                    class="d">radial-gradient(ellipse 50px 70px, #58A, #FB3)</span><br>
+                <span class="v">图五:</span><br>
+                <span class="cv">background: </span><span class="d">radial-gradient(ellipse 50px 70px at left top, #58A, #FB3)</span><br>
+                <span class="v">图六:</span><br>
+                <span class="cv">background: </span><span class="d">radial-gradient(ellipse 50px 70px at 60px bottom, #58A, #FB3)</span>
+            </div>
+        </div>
+        <h4>径向渐变实现波点背景</h4>
+        <div class="examples feature">
+            <div style="float: left;margin-right: 20px;">
+                <div class="bg-item bg-gradient29"></div>
+                <p>图一</p>
+            </div>
+            <div style="float: left;margin-right: 20px;">
+                <div class="bg-item bg-gradient30"></div>
+                <p>图二</p>
+            </div>
+        </div>
+        <p>代码示例:</p>
+        <div class="code feature">
+            <div class="examples">
+                <span class="v">图一:</span><br>
+                <span class="cv">background: </span><span class="d">radial-gradient(rgba(200, 0, 0, 0.5) 30%, transparent 0);</span><br>
+                <span class="cv">background-size: </span><span class="d">40px;</span><br>
+                <span class="v">图二:</span><br>
+                <span class="cv">background: </span><span class="d">radial-gradient(rgba(200, 0, 0, 0.5) 30%, transparent 0),<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;radial-gradient(rgba(200, 0, 0, 0.5) 30%, transparent 0);</span><br>
+                <span class="cv">background-size: </span><span class="d">40px;</span><br>
+                <span class="cv">background-position: </span><span class="d">0 0 , 20px 20px;</span>
+            </div>
+        </div>
+        <h4>repeating-radial-gradient()</h4>
+        <p>用重复的径向渐变创建图像。语法与radial-gradient()相同, 也可以实现一些有意思的效果, 如下图:</p>
+        <div class="examples feature">
+            <div class="bg-item bg-gradient31"></div>
+        </div>
+        <div class="code feature">
+            <div class="examples">
+                <span class="cv">background: </span><span class="d">repeating-radial-gradient(rgba(200, 0, 0, 0.5) 0, rgba(200, 0, 0, 0.5) 20px, transparent 0, transparent 40px);</span><br>
+            </div>
+        </div>
+
+
+    </div>
+</template>

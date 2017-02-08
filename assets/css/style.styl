@@ -6,7 +6,7 @@ html, body {
   color $color-35;
 }
 
-h1, h2, h3, h4, p {
+h1, h2, h3, h4, h5, p {
   margin-bottom 10px;
 }
 
@@ -27,6 +27,10 @@ h3 {
 
 h4 {
   font-size 18px;
+}
+
+h5 {
+  font-size 16px;
 }
 
 p {
@@ -66,10 +70,10 @@ p {
         }
       }
     }
-    & h2{
+    & h2 {
       margin 0;
       margin-top 10px;
-      &:first-child{
+      &:first-child {
         margin 0;
       }
     }
@@ -79,7 +83,7 @@ p {
 .point-text {
   font-weight 300;
   color $color-yellow-light;
-  & a{
+  & a {
     color $color-yellow-light;
     text-decoration underline;
   }
@@ -125,11 +129,10 @@ p {
     background-image url("../img/border-em-3.png");
     background-repeat no-repeat;
   }
-  &.feature{
+  &.feature {
     margin-bottom 15px;
   }
 }
-
 
 .code {
   font-size 16px;
@@ -148,7 +151,7 @@ p {
   & .examples {
     margin-bottom 15px;
   }
-  &.feature{
+  &.feature {
     .examples {
       margin-bottom 40px;
     }
@@ -184,9 +187,24 @@ footer {
   b-box-sizing(border-box);
 }
 
-.border-content{
+.border-content {
+  padding 20px;
+  padding-top 5px;
   width 200px;
   background-image url("../css/feature/img/border-bg.jpg");
 }
 
+.bg-item {
+  padding 10px;
+  width 200px;
+  height 200px;
+  b-box-sizing(border-box);
+}
+
+.bg-preview {
+  height 140px;
+  background-image url("../img/bg.png");
+  background-repeat no-repeat;
+  background-size contain;
+}
 

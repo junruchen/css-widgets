@@ -1,0 +1,222 @@
+.bg-abbreviated {
+  width 500px;
+  background: url("../css/feature/img/border-bg.jpg") padding-box 0% 0% / 60px 60px no-repeat, url("../css/feature/img/border-bg.jpg") 40px 10px / 110px 110px no-repeat content-box, url("../css/feature/img/border-bg.jpg") 140px 40px / 200px 100px no-repeat content-box $color-58A;
+}
+
+.bg-position {
+  width 500px;
+  border 1px solid;
+  background-image url("../css/feature/img/border-bg.jpg");
+  background-size 200px 130px;
+  background-repeat no-repeat;
+  background-position right 20px bottom 30px;
+}
+
+.bg-size {
+  border 1px solid;
+  background-image url("../css/feature/img/border-bg.jpg");
+  background-size cover;
+  background-repeat no-repeat;
+}
+
+.bg-size2 {
+  border 1px solid;
+  background-image url("../css/feature/img/border-bg.jpg");
+  background-size contain;
+  background-repeat no-repeat;
+}
+
+.bg-repeat {
+  border 1px solid;
+  background-image url("../css/feature/img/border-bg.jpg");
+  background-size 100px 50px;
+  background-repeat repeat-y;
+}
+
+.bg-repeat2 {
+  border 1px solid;
+  background-image url("../css/feature/img/border-bg.jpg");
+  background-size 50px 50px;
+  background-repeat space;
+}
+
+.bg-origin {
+  border 10px solid $color-58A;
+  padding 20px;
+  background-image url("../css/feature/img/border-bg.jpg");
+  background-size 120px 100px;
+  background-repeat no-repeat;
+  background-position 10px 20px;
+}
+
+.bg-origin1 {
+  background-origin border-box;
+}
+
+.bg-origin2 {
+  background-origin content-box;
+}
+
+.bg-clip {
+  border 10px dashed $color-FB3;
+  background-color $color-58A;
+  padding 30px;
+  background-image url("../css/feature/img/border-bg.jpg");
+  background-size 120px 100px;
+  background-repeat no-repeat;
+  background-origin border-box;
+}
+
+.bg-clip1 {
+  background-clip padding-box;
+}
+
+.bg-clip2 {
+  background-clip content-box;
+}
+
+.bg-gradient {
+  background linear-gradient($color-58A, $color-FB3);
+}
+
+.bg-gradient1 {
+  background linear-gradient(45deg, $color-58A, $color-FB3);
+}
+
+.bg-gradient2 {
+  background linear-gradient(to right, $color-58A 20%, $color-FB3 60%);
+}
+
+.bg-gradient3 {
+  background linear-gradient($color-58A 50%, $color-FB3 50%);
+}
+
+.bg-gradient4 {
+  background linear-gradient($color-58A 33%, $color-FB3 33%, $color-FB3 66%, $color-red-hover 66%);
+}
+
+.bg-gradient5 {
+  background linear-gradient($color-58A 40%, $color-FB3 0);
+}
+
+.bg-gradient6 {
+  background linear-gradient($color-58A 50%, $color-FB3 0);
+  background-size 100% 40px;
+}
+
+.bg-gradient7 {
+  background linear-gradient(to right, $color-58A 33%, $color-FB3 0, $color-FB3 66%, $color-red-hover 0);
+  background-size 50px 100%;
+}
+
+.bg-gradient8 {
+  background linear-gradient(45deg, $color-58A 50%, $color-FB3 0);
+}
+
+.bg-gradient9 {
+  background linear-gradient(45deg, $color-58A 50%, $color-FB3 0);
+  background-size 50px 50px;
+}
+
+.bg-gradient10 {
+  background linear-gradient(45deg, $color-58A 25%, $color-FB3 0, $color-FB3 50%, $color-58A 0, $color-58A 75%, $color-FB3 0);
+}
+
+.bg-gradient11 {
+  background linear-gradient(45deg, $color-58A 25%, $color-FB3 0, $color-FB3 50%, $color-58A 0, $color-58A 75%, $color-FB3 0);
+  background-size 50px 50px;
+}
+
+.bg-gradient12 {
+  background linear-gradient(30deg, $color-58A 25%, $color-FB3 0, $color-FB3 50%, $color-58A 0, $color-58A 75%, $color-FB3 0);
+  background-size 50px 50px;
+}
+
+.bg-gradient13 {
+  background repeating-linear-gradient(45deg, $color-58A, $color-58A 10px, $color-FB3 0, $color-FB3 20px);
+}
+
+.bg-gradient14 {
+  background repeating-linear-gradient(70deg, $color-58A, $color-58A 15px, $color-FB3 0, $color-FB3 30px, $color-red-hover 0, $color-red-hover 45px);
+}
+
+.bg-gradient15 {
+  background repeating-linear-gradient(30deg, $color-58A, $color-58A 20px, $color-FB3 0, $color-FB3 40px);
+}
+
+.bg-gradient16 {
+  background linear-gradient($color-FB3 20%, $color-58A 80%);
+}
+
+.bg-gradient17 {
+  background linear-gradient(0, rgba(200, 0, 0, 0.5) 50%, transparent 0), linear-gradient(90deg, rgba(200, 0, 0, 0.5) 50%, transparent 0);
+  background-size 20px;
+}
+
+.bg-gradient18 {
+  background linear-gradient(0, rgba(200, 0, 0, 0.5) 1px, transparent 0), linear-gradient(90deg, rgba(200, 0, 0, 0.5) 1px, transparent 0);
+  background-size 20px;
+}
+
+.bg-gradient19 {
+  background linear-gradient(0, $color-white 1px, transparent 0), linear-gradient(90deg, $color-white 1px, transparent 0), linear-gradient(0, $color-white 4px, transparent 0), linear-gradient(90deg, $color-white 4px, transparent 0), $color-58A;
+  background-size 20px, 20px, 40px, 40px;
+}
+
+.bg-gradient20 {
+  background linear-gradient(-125deg, $color-white 15px, $color-58A 0);
+}
+
+.bg-gradient21 {
+  background linear-gradient(125deg, $color-white 15px, $color-58A 0), linear-gradient(-125deg, $color-white 15px, $color-58A 0);
+  background-size 50% 100%;
+  background-position left, right;
+  background-repeat no-repeat;
+}
+
+.bg-gradient22 {
+  background linear-gradient(125deg, $color-white 15px, $color-58A 0), linear-gradient(-125deg, $color-white 15px, $color-58A 0), linear-gradient(45deg, $color-white 15px, $color-58A 0), linear-gradient(-45deg, $color-white 15px, $color-58A 0);
+  background-size 50% 50%;
+  background-position top left, top right, bottom left, bottom right;
+  background-repeat no-repeat;
+}
+
+.bg-gradient23 {
+  background radial-gradient($color-58A, $color-FB3);
+}
+
+.bg-gradient24 {
+  background radial-gradient(50px, $color-58A, $color-FB3);
+}
+
+.bg-gradient25 {
+  background radial-gradient(70px, $color-58A, $color-FB3, $color-red-hover);
+}
+
+.bg-gradient26 {
+  background radial-gradient(ellipse 50px 70px, $color-58A, $color-FB3);
+}
+
+.bg-gradient27 {
+  background radial-gradient(ellipse 50px 70px at left top, $color-58A, $color-FB3);
+}
+
+.bg-gradient28 {
+  background radial-gradient(ellipse 50px 70px at 60px bottom, $color-58A, $color-FB3);
+}
+
+.bg-gradient29 {
+  border: 1px solid $color-F5;
+  background radial-gradient(rgba(200, 0, 0, 0.5) 30%, transparent 0);
+  background-size 40px;
+}
+
+.bg-gradient30 {
+  background radial-gradient(rgba(200, 0, 0, 0.5) 30%, transparent 0), radial-gradient(rgba(200, 0, 0, 0.5) 30%, transparent 0);
+  background-size 40px;
+  background-position 0 0, 20px 20px;
+}
+
+.bg-gradient31 {
+  background repeating-radial-gradient(rgba(200, 0, 0, 0.5) 0, rgba(200, 0, 0, 0.5) 20px, transparent 0, transparent 40px);
+}
