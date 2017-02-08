@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>边框</title>
+    <link rel="stylesheet" href="assets/css/feature/border.css">
+</head>
+<body>
+<div class="container">
+    <div class="border-box b-1">透明边框, 如果想透出最外层背景,而不是盒子本身背景,可使用 background-clip控制</div>
+
+    <div class="border-box b-2">利用box-shadow实现多重边框, 不会影响布局,不受box-sizing影响, 可通过内外边距来模拟边框所需占据的空间</div>
+
+    <div class="border-box b-3">利用box-shadow实现多重边框, 仍然使用圆角效果</div>
+
+    <div class="border-box b-4">利用outline实现边框,最多只能是两层 [但是outline都是矩形,如果想带有圆角,只能使用box-shadow]</div>
+
+    <div class="border-box b-5">有些时候直接使用border 在button标签中会出现使用box-sizing无效的情况,这时候可以使用outline</div>
+
+    <div class="border-box"></div>
+
+    <div class="border-box b-6">圆角 border-radius: 100px / 50px; 100px表示水平半径, 50px表示垂直半径</div>
+
+    <div class="border-box b-7">圆角 border-radius: 50% / 50%; 分别相对宽和高计算半径, 可根据此特性实现自适应椭圆</div>
+
+    <div class="border-box b-8">自适应半椭圆 border-top-left-radius: 50% 50%; 不需要用斜线[/]分开</div>
+
+    <div class="border-box b-9">自适应半椭圆 border-radius简写属性,三个值表示[2=4],也可以使用/给四个角指定不同的水平垂直半径</div>
+
+    <div class="border-box b-10">自适应半椭圆详解<br>
+        结构:水平方向对称,即左上角左下角一致,右上角右下角一致。<br>先看右侧,上下都是大圆角,垂直半径50%,水平100%; <br> 左侧无圆角,所以水平0%,垂直小于等于50%;
+    </div>
+
+    <div class="border-box b-11">四分之一椭圆 只有一个角的半径是100%,其它均无圆角,即0</div>
+
+    <div class="border-box1 bd-1">others</div>
+    <div class="border-box1 bd-2">others</div>
+    <div class="border-box1 bd-3">others</div>
+    <div class="border-box1 bd-4">others</div>
+    <div class="border-box1 bd-5">others</div>
+
+    <div class="border-box bi-1">border-image: IE11+。<br>需使用border-style 指定边框样式<br>1>
+        border-image-slice:切片,可设置1-4个值,可以是数值[如:27,即整个边框图片的
+        27px,默认单位为px,一定不要写单位]也可以是百分比[如:33%,即整个边框图片的33%] 根据九宫格分割。fill九宫格的中间格会被展示出来,覆盖原本的背景[如:27 fill]<br>2>
+        border-image-width:图片宽度,可设置1-4个值,可以是数字[如:1,即border-width的倍数,当未设置border-width时???]可以是长度[如:27px]也可以是百分比[如:13.5%,即整个盒子高度的13.5%]。如果不指定,那就是border-wdith的值
+    </div>
+    <div class="border-box bi-2">3>
+        border-image-outset外凸距离,可设置1-4个值,可以是数值[如:27,即border-width的倍数,当未设置border-width时???]也可以是长度[如:27px]<br>4> border-image-repeat:默认stretch拉伸,repeat重复,round环绕。可1-2个值,两个值表示水平[只对上下中起作用]和垂直方向[只对左右中起作用],平铺可能会改变图片的大小，而重复不会改变图片的大小。四个角上的角边框图片是没有任何展示效果的，不会平铺，不会重复，也不会拉伸。
+    </div>
+    <div class="border-box bi-3">注意: 如果左边右边切片长度之和大于整个盒子的长度,那么上下边框中间部分为空白;同理上下也一样。
+    </div>
+
+
+</div>
+<div class="back"><a href="index.html">back</a></div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+.table-widgets{
+  margin 50px;
+  & table{
+    border: 1px solid $color-E5;
+    border-collapse collapse;
+    color $color-65;
+    font-size 12px;
+    & th{
+      background-color $color-F6;
+      text-align left;
+    }
+    & th, & td{
+      border: 1px solid $color-E5;
+      padding 18px 24px;
+      b-box-sizing(border-box);
+    }
+    & .th-c{
+      text-align center;
+    }
+  }
+  & .tight-table{
+    & th{
+      width 96px;
+    }
+    & th, & td{
+      padding 10px 12px;
+    }
+  }
+
+  & .tightest-table{
+    & th{
+      width 96px;
+
+    }
+    & th, & td{
+      padding 3px 12px;
+    }
+  }
+}

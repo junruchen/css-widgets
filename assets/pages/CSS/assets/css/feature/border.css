@@ -1,0 +1,233 @@
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+li,
+pre,
+fieldset,
+legend,
+button,
+input,
+textarea,
+form,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  font-family: "PingFang SC", "微软雅黑";
+  font-weight: 400;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  line-height: 1.6;
+}
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+}
+canvas {
+  display: block;
+  margin-bottom: 20px;
+  margin-right: 14px;
+}
+a,
+img,
+button,
+input,
+textarea {
+  -webkit-tap-highlight-color: rgba(255,255,255,0);
+}
+@font-face {
+  font-family: 'raphaelicons';
+  src: url("../../font/raphaelicons-webfont.ttf") format('truetype'), url("../../font/raphaelicons-webfont.woff") format('woff'), url("../../font/raphaelicons-webfont.eot") format('eot'), url("../../font/raphaelicons-webfont.svg") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.clr {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+  padding: 0;
+  margin: 0;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.back {
+  cursor: pointer;
+  width: 70px;
+  height: 70px;
+  -ms-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.6);
+  text-align: center;
+  line-height: 70px;
+  position: fixed;
+  bottom: 60px;
+  right: 60px;
+  font-size: 15px;
+}
+.back a {
+  color: #fff;
+}
+.container {
+  width: 960px;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+.border-box {
+  width: 200px;
+  height: 200px;
+  float: left;
+  background: #fff;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-shadow: 0px 0px 5px #fff;
+  color: #353535;
+  margin: 40px;
+  font-size: 16px;
+  text-align: center;
+}
+.border-box1 {
+  width: 100px;
+  height: 50px;
+  float: left;
+  background: #58a;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-shadow: 0px 0px 5px #fff;
+  color: #353535;
+  margin: 40px;
+  font-size: 16px;
+  line-height: 50px;
+  text-align: center;
+}
+.b-1 {
+  border: 10px solid rgba(255,255,255,0.5);
+  background: #fb3;
+}
+.b-2 {
+  border: 10px solid #fb3;
+  box-shadow: 0 0 0 10px #58a;
+}
+.b-3 {
+  border-radius: 5px;
+  box-shadow: 0 0 0 10px #58a, 0 0 0 20px #fb3, 0 0 0 30px #58a;
+}
+.b-4 {
+  outline: 10px solid #58a;
+}
+.b-5 {
+  border-radius: 10px;
+  border: 10px solid #fb3;
+  outline: 10px solid #58a;
+}
+.b-6 {
+  background-color: #fb3;
+  border-radius: 50%;
+}
+.b-7 {
+  height: 100px;
+  background-color: #fb3;
+  border-radius: 50%/50%;
+}
+.b-8 {
+  background-color: #fb3;
+  border-radius: 50%/100% 100% 0 0;
+}
+.b-9 {
+  background-color: #fb3;
+  border-top-left-radius: 100% 50%;
+  border-bottom-left-radius: 100% 50%;
+  border-top-right-radius: 0 50%;
+  border-bottom-right-radius: 0 50%;
+}
+.b-10 {
+  text-align: left;
+  background-color: #fb3;
+  border-radius: 0 100% 100% 0/50%;
+}
+.b-11 {
+  background-color: #fb3;
+  border-radius: 0 0 100% 0;
+}
+.bd-1 {
+  border-radius: 50%/100%;
+}
+.bd-2 {
+  border-radius: 10%/50%;
+}
+.bd-3 {
+  border-radius: 10% 30%/50%;
+}
+.bd-4 {
+  border-radius: 40% 40% 20% 20%/100% 100% 50% 50%;
+}
+.bd-5 {
+  border-radius: 100% 10% 10% 10%;
+}
+.bi-1 {
+  font-size: 14px;
+  width: 100%;
+  text-align: left;
+  background-color: #fb3;
+  background-clip: padding-box;
+  border-style: solid;
+  border-image: url("img/border-bg1.png");
+  border-width: 22px;
+  border-image-slice: 27;
+}
+.bi-2 {
+  width: 100%;
+  font-size: 14px;
+  text-align: left;
+  background-color: #fb3;
+  background-clip: padding-box;
+  border-style: solid;
+  border-image: url("img/border-bg1.png") 33%/27px/27px repeat stretch;
+  border-width: 27px;
+}
+.bi-3 {
+  width: 100%;
+  font-size: 14px;
+  text-align: left;
+  background-color: #fb3;
+  background-clip: padding-box;
+  border-style: solid;
+  border-image: url("img/border-bg1.png");
+  border-image-width: 27px;
+  border-image-slice: 33%;
+  border-image-outset: 27px;
+  border-image-repeat: round;
+}

@@ -1,0 +1,73 @@
+@import "common.styl";
+
+@keyframes move {
+  0% {
+    b-transform(translateX(0));
+  }
+  33% {
+    b-transform(translateX(250px));
+  }
+  66% {
+    b-transform(translate(0, 350px));
+  }
+  100% {
+    b-transform(translate(250px, 350px));
+  }
+}
+@keyframes move-2 {
+  0%, 100% {
+    clip: rect(0px, 320px, 2px, 0px);
+  }
+  25% {
+    clip: rect(0px, 320px, 320px, 318px);
+  }
+  50% {
+    clip: rect(318px, 320px, 320px, 0px);
+  }
+  75% {
+    clip: rect(0px, 2px, 320px, 0px);
+  }
+}
+
+p {
+  text-align center;
+  margin 50px;
+  margin-bottom 30px;
+}
+
+.content {
+  margin-bottom 100px;
+  .box {
+    width 300px;
+    height 400px;
+    background-color gainsboro;
+    margin 0 auto;
+    position relative;
+    & .square {
+      width 50px;
+      height 50px;
+      background-color white;
+      opacity .9;
+      b-animation(move 1s linear 0s 5 alternate forwards running);
+    }
+  }
+  & .box-2 {
+    width 300px;
+    height 300px;
+    background-color gainsboro;
+    margin 0 auto;
+    position relative;
+    & .line {
+      b-box-sizing border-box;
+      position absolute;
+      margin-top -10px;
+      top 0;
+      left 0;
+      margin-left -10px;
+      border 2px solid black;
+      width 320px;
+      height 320px;
+      b-animation(move-2 5s linear infinite);
+    }
+  }
+}

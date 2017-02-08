@@ -19,9 +19,6 @@ const progress = resolve =>require(['./views/widgets/progress.vue'], resolve);
 const feature = {template: '<router-view></router-view>'};
 const border = resolve => require(['./views/feature/border.vue'], resolve);
 const background = resolve => require(['./views/feature/background.vue'], resolve)
-/*---一些有趣的事情---*/
-const funny = {template: '<router-view></router-view>'};
-const minions = resolve => require(['./views/funny/minions.vue'], resolve);
 
 
 Vue.use(VueRouter);
@@ -53,14 +50,7 @@ var router = new VueRouter({
                 {path: 'border', component: border},
                 {path: 'background', component: background},
             ]
-        },
-        {
-            path: '/funny', component: funny,
-            children: [
-                {path: '/', component: minions},
-                {path: 'minions', component: minions},
-            ]
-        },
+        }
     ]
 });
 

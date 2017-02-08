@@ -1,0 +1,80 @@
+/*textarea[placeholder] {
+  padding-left: 16px;
+  padding-top 16px;
+  padding-right 16px;
+  padding-bottom 5px;
+  font-size: 14px;
+  font-weight 100;
+}
+
+textarea::-moz-placeholder {
+  font-weight 100;
+}
+
+textarea:-ms-input-placeholder {
+  font-weight 100;
+}
+
+textarea::-webkit-input-placeholder {
+  font-weight 100;
+}*/
+
+input[placeholder] {
+  color $color-C5;
+}
+
+input::-moz-placeholder {
+  color $color-C5;
+}
+
+input:-ms-input-placeholder {
+  color $color-C5;
+}
+
+input::-webkit-input-placeholder {
+  color $color-C5;
+}
+
+.inputText-widgets {
+  & .input-text {
+    width 196px;
+    height 32px;
+    padding 0 12px;
+    font-size 12px;
+    color $color-65;
+    font-weight 300;
+    outline none;
+    border 1px solid $color-E1;
+    b-box-sizing(border-box);
+    &:focus {
+      border-color $color-base;
+    }
+  }
+  & .input-text-lg{
+    width 240px;
+    height 40px;
+    padding 0 16px;
+  }
+  & .input-text-sm{
+    width 152px;
+    height 24px;
+    padding 0 8px;
+  }
+  & .wrong-input {
+    &:focus {
+      border-color $color-orange;
+    }
+    & + span{
+      color $color-orange;
+      font-size 12px;
+      padding-left 12px;
+    }
+  }
+  & .disable-input-text{
+    color $color-E5;
+    background-color $color-FC;
+    &:focus {
+      border-color $color-E1;
+    }
+  }
+}

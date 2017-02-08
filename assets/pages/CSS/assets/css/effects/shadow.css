@@ -1,0 +1,194 @@
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+li,
+pre,
+fieldset,
+legend,
+button,
+input,
+textarea,
+form,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  font-family: "PingFang SC", "微软雅黑";
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+}
+input[placeholder] {
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 14px;
+  font-weight: 100;
+}
+input::-moz-placeholder {
+  font-weight: 100;
+}
+input:-ms-input-placeholder {
+  font-weight: 100;
+}
+input::-webkit-input-placeholder {
+  font-weight: 100;
+}
+textarea[placeholder] {
+  padding-left: 16px;
+  padding-top: 16px;
+  padding-right: 16px;
+  padding-bottom: 5px;
+  font-size: 14px;
+  font-weight: 100;
+}
+textarea::-moz-placeholder {
+  font-weight: 100;
+}
+textarea:-ms-input-placeholder {
+  font-weight: 100;
+}
+textarea::-webkit-input-placeholder {
+  font-weight: 100;
+}
+canvas {
+  display: block;
+  margin-bottom: 20px;
+  margin-right: 14px;
+}
+a,
+img,
+button,
+input,
+textarea {
+  -webkit-tap-highlight-color: rgba(255,255,255,0);
+}
+@font-face {
+  font-family: 'raphaelicons';
+  src: url("../../font/raphaelicons-webfont.ttf") format('truetype'), url("../../font/raphaelicons-webfont.woff") format('woff'), url("../../font/raphaelicons-webfont.eot") format('eot'), url("../../font/raphaelicons-webfont.svg") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.clr {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+  padding: 0;
+  margin: 0;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.back {
+  cursor: pointer;
+  width: 70px;
+  height: 70px;
+  -ms-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.6);
+  text-align: center;
+  line-height: 70px;
+  position: fixed;
+  bottom: 60px;
+  right: 60px;
+  font-size: 15px;
+}
+.back a {
+  color: #fff;
+}
+h2 {
+  text-align: center;
+  padding: 30px 0;
+}
+.shadow {
+  position: relative;
+  margin: 0 auto;
+  width: 500px;
+  height: 300px;
+  background-image: url("../../img/test-img.png");
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.shadow img {
+  width: 100%;
+}
+.shadow-qu:after,
+.shadow-qu:before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 50%;
+  bottom: 0;
+  z-index: -1;
+  -ms-box-shadow: 0 0 20px rgba(0,0,0,0.9);
+  -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.9);
+  -moz-box-shadow: 0 0 20px rgba(0,0,0,0.9);
+  box-shadow: 0 0 20px rgba(0,0,0,0.9);
+  border-radius: 500px/15px;
+}
+.shadow-qiao:after {
+  content: '';
+  position: absolute;
+  width: 460px;
+  height: 260px;
+  left: 28px;
+  bottom: 8px;
+  z-index: -1;
+  -ms-box-shadow: 2px 5px 8px rgba(0,0,0,0.6);
+  -webkit-box-shadow: 2px 5px 8px rgba(0,0,0,0.6);
+  -moz-box-shadow: 2px 5px 8px rgba(0,0,0,0.6);
+  box-shadow: 2px 5px 8px rgba(0,0,0,0.6);
+  -ms-transform: skew(-7deg) rotate(-2deg);
+  -webkit-transform: skew(-7deg) rotate(-2deg);
+  -moz-transform: skew(-7deg) rotate(-2deg);
+  transform: skew(-7deg) rotate(-2deg);
+}
+.shadow-qiao {
+  margin-bottom: 200px;
+}
+.shadow-qiao:before {
+  content: '';
+  position: absolute;
+  width: 460px;
+  height: 260px;
+  left: 12px;
+  bottom: 8px;
+  z-index: -1;
+  -ms-box-shadow: -2px 5px 8px rgba(0,0,0,0.6);
+  -webkit-box-shadow: -2px 5px 8px rgba(0,0,0,0.6);
+  -moz-box-shadow: -2px 5px 8px rgba(0,0,0,0.6);
+  box-shadow: -2px 5px 8px rgba(0,0,0,0.6);
+  -ms-transform: skew(7deg) rotate(2deg);
+  -webkit-transform: skew(7deg) rotate(2deg);
+  -moz-transform: skew(7deg) rotate(2deg);
+  transform: skew(7deg) rotate(2deg);
+}

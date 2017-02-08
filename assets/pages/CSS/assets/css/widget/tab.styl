@@ -1,0 +1,51 @@
+.tab-widgets{
+  margin 100px;
+  padding 50px;
+  overflow hidden;
+  background-color gainsboro;
+  & .tab{
+    display inline-block;
+    & ul{
+      overflow hidden;
+      & li{
+        float left;
+        font-size 14px;
+        text-align center;
+        background-color $color-FC;
+        b-box-sizing(border-box);
+        padding 17px 24px;
+        line-height 14px;
+        font-weight 300;
+        & a{
+          color $color-35;
+        }
+        &:hover a{
+          color $color-base;
+        }
+      }
+      & .active{
+        font-weight 400;
+        border-top 2px solid $color-base;
+        background-color $color-white;
+        & a{
+          color $color-base;
+        }
+      }
+    }
+  }
+  & .tab-sm{
+    & ul{
+      & li{
+        font-size 12px;
+        padding 10px 12px;
+        line-height 12px;
+        & a{
+          color $color-35;
+        }
+        &:hover a{
+          color $color-base;
+        }
+      }
+    }
+  }
+}

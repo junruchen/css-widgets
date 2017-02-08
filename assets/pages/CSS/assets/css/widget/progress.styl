@@ -1,0 +1,87 @@
+.progress-widgets {
+  margin 200px;
+  & .progress {
+    counter-reset: index;
+    & .progress-item {
+      display inline-block;
+      width 100px;
+      height 4px;
+      background-color $color-blue-light;
+      position relative;
+      &:before {
+        content '';
+        position absolute;
+        width 12px;
+        height 12px;
+        background-color $color-blue-light;
+        b-border-radius(50%);
+        top 50%;
+        margin-top -6px;
+        left 0;
+        margin-left -6px;
+        font-size 12px;
+        text-align center;
+      }
+      & .progress-item-line {
+        width 0;
+        height 100%;
+        background-color $color-blue-light;
+        b-border-radius(4px);
+      }
+      & .progress-item-text{
+        position absolute;
+        font-size 14px;
+        color $color-65;
+        left 0;
+        b-transform(translateX(-50%));
+        bottom 100%;
+        margin-bottom 10px;
+        white-space nowrap;
+      }
+      &:nth-child(2n+1) {
+        &:before {
+          content: counter(index);
+          counter-increment: index;
+          color $color-white;
+          width 16px;
+          height 16px;
+          margin-top -8px;
+          margin-left -8px;
+        }
+        & .progress-item-text{
+          top 100%;
+          margin-top 12px;
+        }
+      }
+      &:last-child{
+        width 0;
+        &:before {
+          width 16px;
+          height 16px;
+          margin-top -8px;
+          margin-left -8px;
+          background-image url("img/progress-over.png");
+          background-size 6px;
+          background-repeat no-repeat;
+          background-position center;
+        }
+        & .progress-item-text{
+          top 100%;
+          margin-top 12px;
+        }
+      }
+    }
+    & .progress-pass {
+      &:before {
+        background-color $color-base;
+      }
+      & .progress-item-line {
+        background-color $color-base;
+      }
+      & .progress-item-text{
+        color $color-base;
+      }
+    }
+  }
+
+}

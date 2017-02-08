@@ -1,0 +1,168 @@
+@import "../base/reset.styl"; //重置
+@import "../base/methods.styl"; //方法
+
+@import "../base/color.styl"; //颜色
+
+$color1 = #fb3
+$color2 = #58a
+
+.container {
+  width 960px;
+  margin 0 auto;
+  padding-top 50px;
+}
+
+.bg-box {
+  width 200px;
+  height 200px;
+  float left;
+
+  b-box-sizing(border-box);
+  text-shadow 0px 0px 5px #fff;
+  color $color-35;
+  padding 20px;
+  margin 20px;
+  font-size 16px;
+  text-align center;
+}
+
+.bg-0 {
+  background $color1;
+  width 100%;
+  text-align left;
+}
+
+.bg-1 {
+  background linear-gradient($color1, $color2);
+}
+
+.bg-2 {
+  background-image radial-gradient($color1, $color2);
+}
+
+.bg-3 {
+  background linear-gradient($color1 20%, $color2 80%);
+}
+
+.bg-4 {
+  background linear-gradient($color1 20%, $color2 20%);
+}
+
+.bg-5 {
+  background linear-gradient($color1 50%, $color2 0);
+  background-size 40px;
+}
+
+.bg-6 {
+  background linear-gradient($color1 30%, $color2 0, $color2 60%, $color-light-pink 0);
+  background-size 40px;
+}
+
+.bg-7 {
+  background linear-gradient(90deg, $color1 50%, $color2 0);
+  background-size 40px;
+}
+
+.bg-8 {
+  background linear-gradient(45deg, $color1 25%, $color2 0, $color2 50%, $color1 0, $color1 75%, $color2 0);
+  background-size 40px;
+}
+
+.bg-9 {
+  background repeating-linear-gradient(60deg, $color1, $color1 15px, $color2 0, $color2 30px);
+}
+
+.bg-10 {
+  background $color2;
+  background-image repeating-linear-gradient(45deg, rgba(255, 255, 255, .5), rgba(255, 255, 255, .5) 15px, transparent 0, transparent 30px)
+}
+
+.bg-11 {
+  background white;
+  background-image linear-gradient(90deg, rgba(200, 0, 0, .5) 50%, transparent 0), linear-gradient(0deg, rgba(200, 0, 0, .5) 50%, transparent 0);
+  background-size 30px 30px;
+}
+
+.bg-12 {
+  background-color $color-white;
+  background-image linear-gradient(0deg, $color2 1px, transparent 0), linear-gradient(90deg, $color2 1px, transparent 0);
+  background-size 30px 30px;
+}
+
+.bg-13 {
+  background-color $color2;
+  background-image linear-gradient(0deg, $color-white 1px, transparent 0), linear-gradient(90deg, $color-white 1px, transparent 0), linear-gradient(0deg, $color-white 3px, transparent 0), linear-gradient(90deg, $color-white 3px, transparent 0);
+  background-size 30px 30px, 30px 30px, 60px 60px, 60px 60px;
+}
+
+.bg-14 {
+  background-image radial-gradient(rgba(200, 0, 0, .5) 30%, transparent 30%);
+  background-size 50px 50px;
+}
+
+.bg-15 {
+  background-image radial-gradient(rgba(200, 0, 0, .5) 30%, transparent 30%), radial-gradient(rgba(200, 0, 0, .5) 30%, transparent 30%);
+  background-size 50px 50px;
+  background-position 0 0, 25px 25px;
+}
+
+.bg-16 {
+  background linear-gradient(-45deg, transparent 15px, $color1 0);
+}
+
+.bg-17 {
+  background linear-gradient(-45deg, transparent 15px, $color1 0), linear-gradient(45deg, transparent 15px, $color1 0);
+  background-size 50% 100%; //水平各占一半,垂直全部
+  background-position right, left;
+  background-repeat no-repeat;
+}
+
+.bg-18 {
+  background linear-gradient(-45deg, transparent 15px, $color1 0), linear-gradient(45deg, transparent 15px, $color1 0),linear-gradient(-135deg, transparent 15px, $color1 0), linear-gradient(135deg, transparent 15px, $color1 0);
+  background-size 50% 50%; //水平各占一半,垂直全部
+  background-position bottom right, bottom left, top right, top left;
+  background-repeat no-repeat;
+}
+.bg-19 {
+  width 100%;
+  background radial-gradient(circle at top left,transparent 20px, #fb3 0);
+  background-position top left;
+}
+
+.bc-1 {
+  text-align left;
+  padding 5px;
+  border 20px solid transparent;
+  background linear-gradient(white, white), url(img/border-bg.jpg) 0 / cover;
+  background-clip padding-box, border-box;
+  background-origin: border-box;
+}
+
+.bc-2 {
+  text-align left;
+  padding 5px;
+  border 10px solid transparent;
+  background linear-gradient(white, white), repeating-linear-gradient(-45deg, $color1 0, $color1 12.5%, transparent 0, transparent 25%, $color2 0, $color2 37.5%, transparent 0, transparent 50%);
+  background-size 20px 20px;
+  background-clip padding-box, border-box;
+  background-origin: border-box;
+}
+
+@keyframes ants {
+  to {
+    background-position 100%;
+  }
+
+}
+
+.bc-3 {
+  text-align left;
+  padding 5px;
+  border 3px solid transparent;
+  background linear-gradient(white, white), repeating-linear-gradient(-45deg, $color1 0, $color1 25%, $color2 0, $color2 50%);
+  background-size 10px 10px;
+  background-clip padding-box, border-box;
+  background-origin: border-box;
+
+  animation ants 12s linear infinite;
+}
