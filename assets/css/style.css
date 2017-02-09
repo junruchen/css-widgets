@@ -203,10 +203,14 @@ header {
   height: 278px;
   width: 100%;
   background-color: #f1f8e9;
-  text-align: center;
   padding-top: 60px;
   box-sizing: border-box;
   margin-bottom: 60px;
+}
+header>div {
+  width: 1070px;
+  height: 100%;
+  margin: 0 auto;
 }
 footer {
   height: 50px;

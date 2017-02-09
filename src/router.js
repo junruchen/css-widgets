@@ -15,10 +15,6 @@ const table = resolve =>require(['./views/widgets/table.vue'], resolve);
 const pagination = resolve =>require(['./views/widgets/pagination.vue'], resolve);
 const tabs = resolve =>require(['./views/widgets/tabs.vue'], resolve);
 const progress = resolve =>require(['./views/widgets/progress.vue'], resolve);
-/*---专题---*/
-const feature = {template: '<router-view></router-view>'};
-const border = resolve => require(['./views/feature/border.vue'], resolve);
-const background = resolve => require(['./views/feature/background.vue'], resolve)
 
 
 Vue.use(VueRouter);
@@ -43,22 +39,8 @@ var router = new VueRouter({
                 {path: 'progress', component: progress}
             ]
         },
-        {
-            path: '/feature', component: feature,
-            children: [
-                {path: '/', component: border},
-                {path: 'border', component: border},
-                {path: 'background', component: background},
-            ]
-        }
     ]
 });
-
-router.beforeEach((to, from, next) => {
-    if (to.query.night && to.query.night == 1)
-        document.body.setAttribute('class', 'night-mode');
-    next();
-})
 
 export default router;
 
