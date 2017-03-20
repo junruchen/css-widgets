@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh_CN">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-COMPATIBLE" content="IE-edge,chrome=1"><!--IE-->
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://cdn.jsdelivr.net/vue.resource/1.2.1/vue-resource.min.js"></script>
+  <title>vue-demo</title>
+</head>
+
+<body>
+<div id="app">
+  <div v-for="(item,idx) of listData">
+    <p>{{idx}}--{{item.featureTitle}}</p>
+  </div>
+</div>
+
+<script>
+  var app = new Vue({
+    el: '#app',
+
+    data: {
+      listData:[]
+    },
+
+    methods: {
+      getData: function () {
+        var _this = this;
+        Vue.http.get('./data.json', []).then(function success(res){
+          console.log(res.data);
+          _this.listData = res.data.data;
+        }, function error(res){});
+      }
+    },
+
+    created: function () {
+      this.getData();
+    }
+  })
+</script>
+
+</body>
+</html>
