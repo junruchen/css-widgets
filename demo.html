@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh_CN">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-COMPATIBLE" content="IE-edge,chrome=1">
+  <!--IE-->
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+  <title>demo</title>
+</head>
+
+<body>
+<div id="app"></div>
+
+<script>
+  var listData = [];
+  var str = '';
+  var appEl = document.querySelector('#app');
+
+  var obj = new XMLHttpRequest();  // XMLHttpRequest对象用于在后台与服务器交换数据
+  obj.open('GET', './data.json', true);
+  obj.onreadystatechange = function () {
+    if (obj.readyState == 4 && obj.status == 200 || obj.status == 304) { // readyState==4说明请求已完成
+      listData = JSON.parse(obj.response).data;
+      listData.forEach(function (item, idx) {
+        str += '<p>' + idx + '--' + item.featureTitle + '</p>'
+      });
+      appEl.innerHTML = str;
+    }
+  };
+  obj.send(null);
+
+</script>
+
+</body>
+</html>
